@@ -14,10 +14,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import symphony.Address.AddressBuilder;
 import symphony.Person.PersonBuilder;
 
 public class PersonGUI extends Application{
-	public String name;
+	public String firstName;
+	public String lastName;
 
 	public PersonGUI(){}
 	
@@ -59,9 +61,12 @@ public class PersonGUI extends Application{
 		VBox vb = new VBox();
 		vb.setSpacing(10);
 		vb.setPrefWidth(400);
-		Label nameLabel = new Label("Enter the name of the person: ");
-		TextField nameTextField = new TextField ();
-		nameTextField.setText("*name");
+		Label fNameLabel = new Label("Enter the first name of the person: ");
+		TextField fNameTextField = new TextField ();
+		Label lNameLabel = new Label("Enter the last name of the person: ");
+		TextField lNameTextField = new TextField ();
+		fNameTextField.setText("*first name");
+		lNameTextField.setText("*last name");
 		Label phoneNumberLabel = new Label("Enter the phone number: ");
 		TextField phoneTextField = new TextField();
 		phoneTextField.setText(" *phone ");
@@ -80,7 +85,7 @@ public class PersonGUI extends Application{
 		btn3.setText("Conductor");
 		btn4.setText("Staff Member");
 		btn5.setText("Customer");
-		vb.getChildren().addAll(nameLabel, nameTextField, phoneNumberLabel, phoneTextField, address, add,  options, btn1, btn2, btn3, btn4, btn5);
+		vb.getChildren().addAll(fNameLabel, lNameLabel, fNameTextField, lNameTextField, phoneNumberLabel, phoneTextField, address, add,  options, btn1, btn2, btn3, btn4, btn5);
 		
 		 
 		ID venue1 = IDFactory.getID("V");
@@ -99,16 +104,17 @@ public class PersonGUI extends Application{
 		 
 		btn1.setOnMouseClicked(e -> {
 
-	      name = nameTextField.getText();
-	      PhoneNumber p = new PhoneNumber(phoneTextField.getText());
-		  String a = add.getText();
-		  Person person1 = new Person.PersonBuilder(name).phone(p).address(a).build();
+	      firstName = fNameTextField.getText();
+	      lastName = lNameTextField.getText();
+	      PhoneNumber p = new PhoneNumber(String.valueOf(phoneTextField.getText()));
+		  Address a = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
+		  Person person1 = new Person.PersonBuilder(firstName).phoneNumber(p).address(a).build();
 		  System.out.println(person1.toString());
 		  //System.out.println(phoneTextField.toString());
+		  person1 = new Accompanist();
 		  
-		  Accompanist accomp1 = new Accompanist(person1);
 		  try {
-			openOtherStage(accomp1, scene);
+			openOtherStage(person1, scene);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -122,7 +128,7 @@ public class PersonGUI extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();
 }
-		protected void openOtherStage(Accompanist accomp1, Scene scene) throws IOException{
+		protected void openOtherStage(Person person1, Scene scene) throws IOException{
 			
 			VBox root = new VBox();
 			Stage newStage = new Stage();
@@ -140,7 +146,7 @@ public class PersonGUI extends Application{
 			root.getChildren().addAll(instrumentLabel, instrument, instrumentGroupLabel, instrumentGroup, save, back, done, print);
 			save.setOnMouseClicked(e -> {
 
-			      accompanists.add(accomp1.toString());
+			      accompanists.add(person1.toString());
 			});
 			back.setOnMouseClicked(e -> {
 

@@ -134,10 +134,10 @@ public class Address {
 			return new Address(this);
 		}
 		
-		public static void main (String[] args){
-			//Example
-			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
-		}
+//		public static void main (String[] args){
+//			//Example
+//			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
+//		}
 	}
 	
 }
