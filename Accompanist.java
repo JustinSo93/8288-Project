@@ -5,14 +5,18 @@ import java.util.ArrayList;
 public class Accompanist extends Person{
 
 	
-
+Accompanist(){
+	super();
+}
 	
 	ID musicianID;
-	String name;
-	String address;
+	String firstName;
+	String lastName;
+	Address address;
 	PhoneNumber phone;
 	String instrumentGroup;
 	String instrumentName;
+	private Person personBuilder;
 	
 
 
@@ -32,26 +36,26 @@ public class Accompanist extends Person{
 
 
 	public void setMusicianID(Object musicianID) {
-		 this.musicianID = IDFactory.getID("M");
+		 this.musicianID = IDFactory.getID("A");
 	}
 
 
-	public String getMusicianName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
 
-	public void setMusicianName(String name) {
-		name = super.name;
+	public void setFirstName(String firstName) {
+		firstName = super.firstName;
 	}
 
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
@@ -87,7 +91,7 @@ public class Accompanist extends Person{
 
 	@Override
 	public String toString() {
-		return "Musician [musicianID=" + musicianID + ", musicianName=" + name + ", address=" + address
+		return "Musician [musicianID=" + musicianID + ", musicianName=" + firstName + " " + lastName + ", address=" + address
 				+ ", phoneNumber=" + phone + ", instrumentGroup=" + instrumentGroup
 				+ ", instrumentName=" + instrumentName + "]";
 	}
