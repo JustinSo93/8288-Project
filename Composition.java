@@ -21,7 +21,7 @@ public class Composition {
 	}
 	
 	public void setId(int id){
-		
+		this.id = id;
 	}
 	
 	public String getCompositionName(){
@@ -30,17 +30,16 @@ public class Composition {
 	}
 	
 	public void setCompositionName(String compositionName){
-		
+		this.compositionName = compositionName;
 	}
 	
 	public ArrayList<Movement> getMovement(){
 		return movement;
-		
 	}
 	
 	
 	public void setMovement(ArrayList<Movement> movement){
-		
+		this.movement = movement;
 	}
 
 	public ArrayList<Soloist> getSoloist(){
@@ -51,7 +50,7 @@ public class Composition {
 	}
 	
 	public void setSoloist(ArrayList<Soloist> soloist){
-		
+		this.soloist = soloist;
 	}
 	
 	public Composer getComposer(){
@@ -60,6 +59,6 @@ public class Composition {
 	}
 	
 	public void setComposer(Composer composer){
-		
+		this.composer = composer;
 	}
 }
