@@ -1,5 +1,6 @@
 package domain;
 
+
 import java.util.ArrayList;
 
 public class Conductor extends Person{
@@ -7,32 +8,22 @@ public class Conductor extends Person{
 	ID conductorID;
 	String instrumentName;
 	String instrumentGroup;
-	ArrayList<String> shows;	
+	ArrayList<VenueDate> shows;	
 	
 	
 		
-	 Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, String emailAddress, String instrument,
-			String instrumentGroup, ArrayList<String> shows) {
-	    	super(firstName, lastName, phoneNumber, address, emailAddress);
+	Conductor(String firstName, String lastName, PhoneNumber phone, Address address, String emailAddress, String instrument,
+			String instrumentGroup, ArrayList<VenueDate> shows) {
+	    	super(firstName, lastName, phone, address, emailAddress);
 			this.instrumentName =instrument;
 			this.instrumentGroup =instrumentGroup;
 			this.shows = shows;
-			this.emailAddress = emailAddress;
 			this.setConductorID();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
 		
-
-
-
-
-
-
-
-
-
-
 
 		public ID getConductorID() {
 			
@@ -41,7 +32,7 @@ public class Conductor extends Person{
 
 
 		public void setConductorID() {
-			 conductorID = IDFactory.getID("CON");
+			 conductorID = IDFactory.getID("C");
 		}
 	
 		public String getInstrumentGroup() {
@@ -64,8 +55,8 @@ public class Conductor extends Person{
 		}
 		@Override
 		public String toString() {
-		return "\nID: " + this.conductorID.toString() + ", name: " + firstName + " " + lastName + ", \naddress:  " + address.toString()
-		+ ", \nphone number: " + phoneNumber + ", \nInstrument group: " + instrumentGroup
-		+ ", Instrument name =" + instrumentName + "\nConcerts: " +shows + "\n*****************************************************\n ";
+		return "ConductorID =" + this.conductorID.toString() + ", musicianName =" + firstName + " " + lastName + ", address = " + address.toString()
+		+ ", phoneNumber=" + phoneNumber.toString() + ", instrumentGroup =" + instrumentGroup
+		+ ", instrumentName =" + instrumentName + "Concerts: " +shows ;
 }
 }
