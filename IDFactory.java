@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 public class IDFactory {
 
@@ -12,6 +12,7 @@ switch(x){
 		case "C" : return (ID) new CustomerID();
 		case "CON" : return (ID) new ConductorID();
 		case "S" : return (ID) new SoloistID();
+		case "ST" : return (ID) new StaffID();
 		      }
 		return null;		
 	                    }

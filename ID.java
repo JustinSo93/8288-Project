@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 public interface ID{
 	String createID();

@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 import javax.swing.JOptionPane;
 

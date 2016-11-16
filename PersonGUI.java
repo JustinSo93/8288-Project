@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 
 
@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.sun.corba.se.pept.transport.EventHandler;
+
+import domain.Address.AddressBuilder;
+import domain.Person.PersonBuilder;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -14,8 +17,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import symphony.Address.AddressBuilder;
-import symphony.Person.PersonBuilder;
 
 public class PersonGUI extends Application{
 	public String firstName;
@@ -328,10 +329,9 @@ protected void openStaffStage(Person person, Scene scene) throws IOException{
 	root.getChildren().addAll(jobLabel, jobText, staffShowLabel, staffShowTextField, saveShow, saveStaff, back, done, print);
 	saveStaff.setOnMouseClicked(e -> {
          String job = staffShowTextField.getText();
-//         String  = instrumentText.getText();
-//         StaffMember staff = new StaffMember(person.firstName,person.lastName,person.getphoneNumber(),person.address,instrument, instrumentGroup);
-//         //System.out.println(accomp1);
-	     //symphony.add();
+         staffShows.add(staffShowTextField.getText());
+         StaffMember staff = new StaffMember(person.firstName,person.lastName,person.getphoneNumber(),person.address,job, staffShows);
+	     symphony.add(staff);
 	});
 	back.setOnMouseClicked(e -> {
 

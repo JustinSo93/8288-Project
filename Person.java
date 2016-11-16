@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 	
 	public class Person{
 		
@@ -109,7 +109,7 @@ package symphony;
 			private PhoneNumber phoneNumber;
 			private Address address;
 			private String emailAddress;
-			private symphony.ID id;
+			private domain.ID id;
 			
 			public PersonBuilder (String firstName){
 				this.firstName = firstName;

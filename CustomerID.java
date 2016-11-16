@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 public class CustomerID implements ID {
 

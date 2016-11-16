@@ -1,4 +1,4 @@
-package symphony;
+package domain;
 
 public class ConductorID implements ID {
 
