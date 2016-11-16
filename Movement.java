@@ -11,7 +11,7 @@ public class Movement {
 	}
 	
 	public void setId(int id){
-		
+		this.id = id;
 	}
 	
 	public String getMovementName(){
@@ -20,10 +20,8 @@ public class Movement {
 	}
 	
 	public void setMovementName(String movementName){
-		
+		this.movementName = movementName;
 	}
 	
-	protected void operation(){
-		
-	}
+	
 }
