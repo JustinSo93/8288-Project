@@ -6,15 +6,14 @@ public class Accompanist extends Person{
 	ID accompID;
 	String instrumentGroup;
 	String instrumentName;
-	private PhoneNumber phone;
+
 	
 Accompanist(String firstName, String lastName, PhoneNumber phone, 
-		Address address, String instrument, String instrumentGroup){
+		Address address, String emailAddress, String instrument, String instrumentGroup){
 	
-	super(firstName, lastName, phone, address);
+	super(firstName, lastName, phone, address, emailAddress);
 	this.instrumentName =instrument;
 	this.instrumentGroup =instrumentGroup;
-	this.phone = phone;
 	this.setAccompID();
 	}
 	
@@ -51,8 +50,8 @@ Accompanist(String firstName, String lastName, PhoneNumber phone,
 	public String toString() {
 		
 		return "ID: " + this.accompID.toString() + ", name:" + firstName + " " + lastName + ", \naddress: " + address.toString()
-				+ ", \nphoneNumber: " + phone + ", instrument group: " + instrumentGroup
-				+ ", instrument name: " + instrumentName + "]\n*****************************************************";
+				+ ", \nphoneNumber: " + phoneNumber + ", instrument group: " + instrumentGroup
+				+ ", instrument name: " + instrumentName + "]\n*****************************************************\n ";
 	}
 	
 }

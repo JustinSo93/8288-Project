@@ -5,9 +5,9 @@ package domain;
 		private ID id;
 		protected String firstName;
 		public String lastName;
-		private PhoneNumber phoneNumber;
+		protected PhoneNumber phoneNumber;
 		protected Address address;
-		private String emailAddress;
+		protected String emailAddress;
 		
 		
 		private Person (PersonBuilder builder){
@@ -19,13 +19,13 @@ package domain;
 			this.emailAddress = builder.emailAddress;
 		}
 		
-		public Person(String fName, String lName, PhoneNumber phone, Address address){
+		public Person(String fName, String lName, PhoneNumber phone, Address address, String emailAddress){
 	
 			this.firstName = fName;
 			this.lastName = lName;
 			this.phoneNumber = phone;
 			this.address = address;
-			this.emailAddress = "";
+			this.emailAddress = emailAddress;
 		}
 		public ID getID() {
 			return id;

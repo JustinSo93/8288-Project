@@ -7,23 +7,32 @@ public class Conductor extends Person{
 	ID conductorID;
 	String instrumentName;
 	String instrumentGroup;
-	private PhoneNumber phone;
 	ArrayList<String> shows;	
 	
 	
 		
-	 Conductor(String firstName, String lastName, PhoneNumber phone, Address address, String instrument,
+	 Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, String emailAddress, String instrument,
 			String instrumentGroup, ArrayList<String> shows) {
-	    	super(firstName, lastName, phone, address);
+	    	super(firstName, lastName, phoneNumber, address, emailAddress);
 			this.instrumentName =instrument;
 			this.instrumentGroup =instrumentGroup;
-			this.phone = phone;
 			this.shows = shows;
+			this.emailAddress = emailAddress;
 			this.setConductorID();
 		// TODO Auto-generated constructor stub
 	}
 
 		
+
+
+
+
+
+
+
+
+
+
 
 		public ID getConductorID() {
 			
@@ -56,7 +65,7 @@ public class Conductor extends Person{
 		@Override
 		public String toString() {
 		return "\nID: " + this.conductorID.toString() + ", name: " + firstName + " " + lastName + ", \naddress:  " + address.toString()
-		+ ", \nphone number: " + phone + ", \nInstrument group: " + instrumentGroup
-		+ ", Instrument name =" + instrumentName + "\nConcerts: " +shows + "\n*****************************************************";
+		+ ", \nphone number: " + phoneNumber + ", \nInstrument group: " + instrumentGroup
+		+ ", Instrument name =" + instrumentName + "\nConcerts: " +shows + "\n*****************************************************\n ";
 }
 }

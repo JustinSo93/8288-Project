@@ -6,14 +6,13 @@ public class StaffMember extends Person{
 
 	String job;
 	ArrayList<String>staffShows;
-	PhoneNumber phone;
 	ID staffID;
 	
-	public StaffMember(String fName, String lName, PhoneNumber phone, Address address, String job, ArrayList<String>staffShows) {
-		super(fName, lName, phone, address);
+	public StaffMember(String fName, String lName, PhoneNumber phoneNumber, Address address, String emailAddress, String job, ArrayList<String>staffShows) {
+		super(fName, lName, phoneNumber, address, emailAddress);
 		this.job = job;
 		this.staffShows = staffShows;
-		this.phone = phone;
+		this.emailAddress = emailAddress;
 		this.setStaffID();; 
 		
 		// TODO Auto-generated constructor stub
@@ -65,7 +64,7 @@ public class StaffMember extends Person{
 		@Override
 		public String toString() {
 		return "\nID: " + this.staffID.toString() + ", name: " + firstName + " " + lastName + ", \naddress:  " + address.toString()
-		+ ", \nphone number: " + phone + ", \njob: " + job + 
-		 ", \nShows : " + staffShows + "\n*****************************************************";
+		+ ", \nphone number: " + phoneNumber + ", \njob: " + job + 
+		 ", \nShows : " + staffShows + "\n*****************************************************\n ";
 }
 }

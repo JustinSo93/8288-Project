@@ -8,13 +8,12 @@ public class Soloist extends Person {
 	ID soloistID;
 	String instrumentName;
 	String instrumentGroup;
-	private PhoneNumber phone;
-	public Soloist(String firstName, String lastName, PhoneNumber phone, Address address, String instrument,
+	public Soloist(String firstName, String lastName, PhoneNumber phone, Address address, String emailAddress, String instrument,
 			String instrumentGroup, ArrayList<CompLastDatePlayed> compositionsDate) {
-		super(firstName, lastName, phone, address);
+		super(firstName, lastName, phone, address, emailAddress);
 		this.instrumentName =instrument;
 		this.instrumentGroup =instrumentGroup;
-		this.phone = phone;
+		this.emailAddress = emailAddress;
 		this.compositionsDate = compositionsDate;
 		this.setSoloistID();
 		// TODO Auto-generated constructor stub
@@ -50,8 +49,8 @@ public class Soloist extends Person {
 	@Override
 	public String toString() {
 	return "\nID : " + this.soloistID.toString() + ", name: " + firstName + " " + lastName + ", \naddress: " + address.toString()
-	+ ", \nphone number: " + phone + ", \ninstrument group: " + instrumentGroup
+	+ ", \nphone number: " + phoneNumber  + ", \ninstrument group: " + instrumentGroup
 	+ ", instrument name: " + instrumentName + "\nCompositions and last date played: " + compositionsDate.toString() +
-	"\n*****************************************************";
+	"\n***************************************************** \n ";
 }
 }

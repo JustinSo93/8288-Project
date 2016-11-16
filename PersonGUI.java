@@ -39,12 +39,7 @@ public class PersonGUI extends Application{
 	public Stage theStage;
 	public Scene scene;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		launch(args);
-		
-	
-	}
+
 
 	public  void start(Stage primaryStage) throws Exception {
 
@@ -74,6 +69,8 @@ public class PersonGUI extends Application{
 		TextField provinceStateTextField = new TextField();
 		Label countryLabel = new Label("Enter the country:  ");
 		TextField countryTextField = new TextField();
+		Label emailLabel = new Label("Enter the email:  ");
+		TextField emailTextField = new TextField();
 		Button saveAndCont = new Button("Save and Continue");
 		Label options = new Label();
 		options.setText("What type of person would you like to add to the system?");
@@ -89,7 +86,7 @@ public class PersonGUI extends Application{
 		btn5.setText("Customer");
 		vb.getChildren().addAll(fNameLabel, fNameTextField,  lNameLabel, lNameTextField, phoneNumberLabel, phoneTextField, streetNumLabel, 
 				streetNumTextField, streetLabel, streetTextField, cityLabel, cityTextField, postalCodeLabel, postalCodeTextField, 
-				provinceStateLabel, provinceStateTextField, countryLabel, countryTextField,  saveAndCont, options, btn1, btn2, btn3, btn4, btn5);
+				provinceStateLabel, provinceStateTextField, countryLabel, countryTextField,  emailLabel, emailTextField, saveAndCont, options, btn1, btn2, btn3, btn4, btn5);
 	
 	saveAndCont.setOnMouseClicked(e -> {
 
@@ -102,9 +99,9 @@ public class PersonGUI extends Application{
 	      String province = provinceStateTextField.getText();
 	      String postalCode = postalCodeTextField.getText();
 	      String country = countryTextField.getText();
-	      
+	      String emailAddress = emailTextField.getText();
 		  address = new Address.AddressBuilder(streetNumber, streetName).city(city).provinceState(province).postalCode(postalCode).country(country).build();
-		  person = new Person.PersonBuilder(firstName).lastName(lastName).phoneNumber(phone).address(address).build();
+		  person = new Person.PersonBuilder(firstName).lastName(lastName).phoneNumber(phone).address(address).emailAddress(emailAddress).build();
 		 // System.out.println(person.toString());
 		 
 			
@@ -165,7 +162,7 @@ public class PersonGUI extends Application{
 			saveAccomp.setOnMouseClicked(e -> {
                  String instrumentGroup = instrumentGroupText.getText();
                  String instrument = instrumentText.getText();
-                 Accompanist accomp1 = new Accompanist(person.firstName,person.lastName,person.getphoneNumber(),person.address,instrument, instrumentGroup);
+                 Accompanist accomp1 = new Accompanist(person.firstName,person.lastName,person.getphoneNumber(),person.address, person.emailAddress, instrument, instrumentGroup);
                  //System.out.println(accomp1);
 			     symphony.add(accomp1);
 			});
@@ -211,7 +208,7 @@ protected void openConductorStage(Person person, Scene scene) throws IOException
 			saveCon.setOnMouseClicked(e -> {
                  String instrumentGroup = instrumentGroupText.getText();
                  String instrument = instrumentText.getText();
-                 Conductor conductor = new Conductor(person.firstName,person.lastName,person.getphoneNumber(),person.address,instrument, instrumentGroup, shows);
+                 Conductor conductor = new Conductor(person.firstName,person.lastName,person.phoneNumber,person.address, person.emailAddress, instrument, instrumentGroup, shows);
                  conductor.getID();
                  //System.out.println(conductor);
 			     symphony.add(conductor);
@@ -276,7 +273,7 @@ protected void openSoloistStage(Person person, Scene scene) throws IOException{
          String instrumentGroup = instrumentGroupText.getText();
          String instrument = instrumentText.getText();
          
-         Soloist soloist = new Soloist(person.firstName,person.lastName,person.getphoneNumber(),person.address,instrument, instrumentGroup, compositionsDate);
+         Soloist soloist = new Soloist(person.firstName,person.lastName,person.getphoneNumber(),person.address,person.emailAddress, instrument, instrumentGroup, compositionsDate);
          soloist.getID();
          //System.out.println(soloist);
 	     symphony.add(soloist);
@@ -330,7 +327,7 @@ protected void openStaffStage(Person person, Scene scene) throws IOException{
 	saveStaff.setOnMouseClicked(e -> {
          String job = staffShowTextField.getText();
          staffShows.add(staffShowTextField.getText());
-         StaffMember staff = new StaffMember(person.firstName,person.lastName,person.getphoneNumber(),person.address,job, staffShows);
+         StaffMember staff = new StaffMember(person.firstName,person.lastName,person.phoneNumber,person.address,person.emailAddress, job, staffShows);
 	     symphony.add(staff);
 	});
 	back.setOnMouseClicked(e -> {
