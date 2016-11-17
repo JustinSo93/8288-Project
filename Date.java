@@ -1,5 +1,7 @@
 package domain;
 
+import javax.swing.JOptionPane;
+
 public class Date {
 
 private int day;
@@ -31,7 +33,16 @@ private int year;
 	 * @param day the day to set
 	 */
 	public void setDay(int day) {
-		this.day = day;
+		if (day <31 && day <=0){
+			this.day = day;
+		}
+		else{
+			while(day>31 || day<=0){
+				String s = JOptionPane.showInputDialog("Error: Enter the day");
+				day = Integer.parseInt(s);
+			}
+			this.day = day;
+		}
 	}
 	
 	
@@ -49,7 +60,15 @@ private int year;
 	 * @param month the month to set
 	 */
 	public void setMonth(int month) {
-		this.month = month;
+		if (month>0 && month<13){
+			this.month = month;
+		}else{
+			while(month<0 || month>13){
+				String s = JOptionPane.showInputDialog("Enter a month between 1 and 12");
+				month = Integer.parseInt(s);
+			}
+			this.month = month;
+		}
 	}
 	
 	
@@ -67,7 +86,14 @@ private int year;
 	 * @param year the year to set
 	 */
 	public void setYear(int year) {
-		this.year = year;
+		if (year>2016 && year<2100){
+			this.year = year;
+		}else{
+			while(year<2016 || year>2100){
+				String s = JOptionPane.showInputDialog("Enter a year between 2016 and 2100");
+				year = Integer.parseInt(s);
+			}
+		}
 	}
 	
 	public String toString(){
@@ -82,4 +108,3 @@ private int year;
 	}
 
 }
-
