@@ -1,3 +1,4 @@
+
 package domain;
 
 public class IDFactory {
@@ -13,14 +14,10 @@ switch(x){
 		case "CON" : return (ID) new ConductorID();
 		case "S" : return (ID) new SoloistID();
 		case "ST" : return (ID) new StaffID();
+		case "TRN" : return (ID) new TransactionID();
 		      }
 		return null;		
 	                    }
                        }	
-
-
-
-
-
 
 
