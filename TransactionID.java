@@ -7,7 +7,7 @@ public class TransactionID implements ID{
 	public static int transCount;
 	
 	
-	String transCode = "Trans";
+	String transCode = "TRN";
 
 
 
