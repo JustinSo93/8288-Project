@@ -31,7 +31,7 @@ public class PersonGUI extends Application{
 	this.test=test;
 	}
 	
-	public ArrayList<Person> symphony = new ArrayList();
+	//public ArrayList<Object> symphony = new ArrayList();
 	public ArrayList<String> shows = new ArrayList();
 	public ArrayList<String> staffShows = new ArrayList();
 	public ArrayList<CompLastDatePlayed> compositionsDate = new ArrayList();
@@ -41,10 +41,10 @@ public class PersonGUI extends Application{
 
 
 
-	public  void start(Stage primaryStage) throws Exception {
+	public  void start(Stage primaryStage, ArrayList<Object> symphony) throws Exception {
 
-		Stage theStage = primaryStage;
-		primaryStage.setTitle("Musician Builder");
+	    Stage newStage = new Stage();
+		newStage.setTitle("Musician Builder");
 		VBox vb = new VBox();
 		vb.setSpacing(10);
 		vb.setPrefWidth(400);
@@ -110,7 +110,7 @@ public class PersonGUI extends Application{
 	  
 	btn1.setOnMouseClicked(e -> {
 	  try {
-		openAccompanistStage(person, scene);
+		openAccompanistStage(person, scene, symphony);
 	} catch (IOException e1) {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
@@ -118,14 +118,14 @@ public class PersonGUI extends Application{
 	
 	btn2.setOnMouseClicked(e -> {
 		  try {
-			openSoloistStage(person, scene);
+			openSoloistStage(person, scene, symphony);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}});
 	btn3.setOnMouseClicked(e -> {
 		  try {
-			openConductorStage(person, scene);
+			openConductorStage(person, scene, symphony);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -133,17 +133,17 @@ public class PersonGUI extends Application{
 	
 	btn4.setOnMouseClicked(e -> {
 		  try {
-			openStaffStage(person, scene);
+			openStaffStage(person, scene, symphony);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}});
 	  
 		Scene scene = new Scene(vb);
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		newStage.setScene(scene);
+		newStage.show();
 }
-		protected void openAccompanistStage(Person person, Scene scene) throws IOException{
+		protected void openAccompanistStage(Person person, Scene scene, ArrayList symphony) throws IOException{
 			
 			VBox root = new VBox();
 			Stage newStage = new Stage();
@@ -185,7 +185,7 @@ public class PersonGUI extends Application{
 	}
 		
 		
-protected void openConductorStage(Person person, Scene scene) throws IOException{
+protected void openConductorStage(Person person, Scene scene, ArrayList symphony) throws IOException{
 			
 			VBox root = new VBox();
 			Stage newStage = new Stage();
@@ -241,7 +241,7 @@ protected void openConductorStage(Person person, Scene scene) throws IOException
 			
 	}
 		
-protected void openSoloistStage(Person person, Scene scene) throws IOException{
+protected void openSoloistStage(Person person, Scene scene, ArrayList symphony) throws IOException{
 	
 	VBox root = new VBox();
 	Stage newStage = new Stage();
@@ -307,7 +307,7 @@ protected void openSoloistStage(Person person, Scene scene) throws IOException{
 	
 }
 
-protected void openStaffStage(Person person, Scene scene) throws IOException{
+protected void openStaffStage(Person person, Scene scene, ArrayList symphony) throws IOException{
 	
 	VBox root = new VBox();
 	Stage newStage = new Stage();
@@ -347,6 +347,14 @@ protected void openStaffStage(Person person, Scene scene) throws IOException{
 	newStage.show();
 	
 }
+
+@Override
+public void start(Stage primaryStage) throws Exception {
+	// TODO Auto-generated method stub
+	
+}
+
+
 
 }
 	

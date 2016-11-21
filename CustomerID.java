@@ -1,20 +1,11 @@
 package domain;
 
-public class CustomerID implements ID{
-	
-	public static int custCount;
-	String custCode = "C";
-	
-@Override
+public class CustomerID implements ID {
+
+	@Override
 	public String createID() {
-		return custCode.toString();
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	@Override 
-	public String toString(){
-		custCount ++;
-		return custCode + custCount;
-	}
-	 
-	
+
 }

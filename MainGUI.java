@@ -23,7 +23,7 @@ public class MainGUI extends Application{
     Address address;
     Person person;
 	public MainGUI(){}
-	
+	public ArrayList<Object> symphony = new ArrayList();
 
 	
 	
@@ -32,6 +32,7 @@ public class MainGUI extends Application{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		launch(args);
 		
 	
@@ -52,21 +53,32 @@ public class MainGUI extends Application{
 		Button btn3 = new Button();
 		Button btn4 = new Button();
 		
-		btn1.setText("Add or edit an employee or customer");
+		btn1.setText("Add an employee or customer");
 		btn2.setText("Add or edit a performance, show or venue");
 		btn3.setText("Buy tickets");
-		btn4.setText("Search the existing database");
+		btn4.setText("Search or edit the existing database");
+		
 		
 		vb.getChildren().addAll(mainLabel, btn1,  btn2, btn3, btn4);
 		
 		btn1.setOnMouseClicked(e -> {
 		 PersonGUI makePerson = new PersonGUI();
 		 try {
-			makePerson.start(primaryStage);
+			makePerson.start(theStage, symphony);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}});
+		
+		btn4.setOnMouseClicked(e -> {
+			searchGUI newSearch = new searchGUI();
+			 try {
+				newSearch.start(primaryStage, symphony);
+				
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}});
 	
 		Scene scene = new Scene(vb);
 		primaryStage.setScene(scene);

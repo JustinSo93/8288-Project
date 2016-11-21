@@ -32,6 +32,16 @@ public class Address {
 	public int getStreetNumber() {
 		return streetNumber;
 	}
+	@Override
+	public String toString() {
+		if (this.street.equals(null)){
+			return "You need to provide a street name";
+		}
+		else{
+		return   streetNumber + " "  + street + " " +city+" " 
+				+ postalCode  +" " + provinceState + " "+ country ;
+		}
+	}
 	/**
 	 * @param streetNumber the streetNumber to set
 	 */
@@ -133,11 +143,15 @@ public class Address {
 		public Address build(){
 			return new Address(this);
 		}
+
+
 		
-		public static void main (String[] args){
-			//Example
-			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
-		}
+	
+//		public static void main (String[] args){
+//			//Example
+//			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
+//		}
 	}
 	
 }
+
