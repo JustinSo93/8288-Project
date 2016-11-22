@@ -5,7 +5,7 @@ public class Address {
 	private int streetNumber;
 	private String street;
 	private String city;
-	private String postalCode;
+	private PostalCode postalCode;
 	private String provinceState;
 	private String country;
 	
@@ -22,7 +22,7 @@ public class Address {
 		this.streetNumber = 0;
 		this.street = "";
 		this.city = "";
-		this.postalCode = "";
+		this.postalCode = new PostalCode("");
 		this.provinceState = "";
 		this.country = "";
 	}
@@ -31,16 +31,6 @@ public class Address {
 	 */
 	public int getStreetNumber() {
 		return streetNumber;
-	}
-	@Override
-	public String toString() {
-		if (this.street.equals(null)){
-			return "You need to provide a street name";
-		}
-		else{
-		return   streetNumber + " "  + street + " " +city+" " 
-				+ postalCode  +" " + provinceState + " "+ country ;
-		}
 	}
 	/**
 	 * @param streetNumber the streetNumber to set
@@ -63,7 +53,7 @@ public class Address {
 	/**
 	 * @return the postalCode
 	 */
-	public String getPostalCode() {
+	public PostalCode getPostalCode() {
 		return postalCode;
 	}
 	/**
@@ -81,7 +71,7 @@ public class Address {
 	/**
 	 * @param postalCode the postalCode to set
 	 */
-	public void setPostalCode(String postalCode) {
+	public void setPostalCode(PostalCode postalCode) {
 		this.postalCode = postalCode;
 	}
 	/**
@@ -113,7 +103,7 @@ public class Address {
 		private int streetNumber;
 		private String street;
 		private String city;
-		private String postalCode;
+		private PostalCode postalCode;
 		private String provinceState;
 		private String country;
 		
@@ -126,7 +116,7 @@ public class Address {
 			this.city = c;
 			return this;
 		}
-		public AddressBuilder postalCode(String pC){
+		public AddressBuilder postalCode(PostalCode pC){
 			this.postalCode = pC;
 			return this;
 		}
@@ -143,15 +133,11 @@ public class Address {
 		public Address build(){
 			return new Address(this);
 		}
-
-
 		
-	
-//		public static void main (String[] args){
-//			//Example
-//			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
-//		}
+		public static void main (String[] args){
+			//Example
+			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
+		}
 	}
 	
 }
-

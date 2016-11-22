@@ -5,7 +5,7 @@ package domain;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import com.sun.corba.se.pept.transport.EventHandler;
+
 
 import domain.Address.AddressBuilder;
 import domain.Person.PersonBuilder;
@@ -97,7 +97,7 @@ public class PersonGUI extends Application{
 	      String streetName = streetTextField.getText();
 	      String city = cityTextField.getText();
 	      String province = provinceStateTextField.getText();
-	      String postalCode = postalCodeTextField.getText();
+	      PostalCode postalCode = new PostalCode(postalCodeTextField.getText());
 	      String country = countryTextField.getText();
 	      String emailAddress = emailTextField.getText();
 		  address = new Address.AddressBuilder(streetNumber, streetName).city(city).provinceState(province).postalCode(postalCode).country(country).build();
@@ -358,4 +358,3 @@ public void start(Stage primaryStage) throws Exception {
 
 }
 	
-
