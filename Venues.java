@@ -63,8 +63,64 @@ public class Venues {
 	
 	
 
+	/**
+	 * @return the seatingCapacity
+	 */
+	public int getSeatingCapacity() {
+		return seatingCapacity;
+	}
+
+	/**
+	 * @param seatingCapacity the seatingCapacity to set
+	 */
+	public void setSeatingCapacity(int seatingCapacity) {
+		this.seatingCapacity = seatingCapacity;
+	}
+
+	/**
+	 * @return the numberOfRows
+	 */
+	public int getNumberOfRows() {
+		return numberOfRows;
+	}
+
+	/**
+	 * @param numberOfRows the numberOfRows to set
+	 */
+	public void setNumberOfRows(int numberOfRows) {
+		this.numberOfRows = numberOfRows;
+	}
+
+	/**
+	 * @return the venueTickets
+	 */
+	public ArrayList<Tickets> getVenueTickets() {
+		return venueTickets;
+	}
+
+	/**
+	 * @param venueTickets the venueTickets to set
+	 */
+	public void setVenueTickets(ArrayList<Tickets> venueTickets) {
+		this.venueTickets = venueTickets;
+	}
+
+	/**
+	 * @return the phoneNumber
+	 */
+	public PhoneNumber getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * @param phoneNumber the phoneNumber to set
+	 */
+	public void setPhoneNumber(PhoneNumber phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	public static void main(String[] args){
-		Venues v = new Venues();
+		
 		
 	}
 
