@@ -12,6 +12,8 @@ public class ScheduledConcert  extends TemplateConcert{
 	protected VenueDate venuedate;
 	protected ArrayList<Tickets> ticketList;
 	
+
+	protected double revenue;
 	
 	public ScheduledConcert(){
 		super();
@@ -25,6 +27,11 @@ public class ScheduledConcert  extends TemplateConcert{
 		this.ticketList = tL;
 	}
 	
+	public void sellTicket(Tickets ticket){
+		revenue += ticket.getPrice();
+		boolean a = true;
+		ticket.setIsSold(a);
+	}
 	public void generateTickets ()	{
 		char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'};
 		try{
@@ -91,6 +98,19 @@ public class ScheduledConcert  extends TemplateConcert{
 		this.venuedate = vd;
 	}
 	
+	/**
+	 * @return the revenue
+	 */
+	public double getRevenue() {
+		return revenue;
+	}
+
+	/**
+	 * @param revenue the revenue to set
+	 */
+	public void setRevenue(double revenue) {
+		this.revenue = revenue;
+	}
 	
 	
 	
