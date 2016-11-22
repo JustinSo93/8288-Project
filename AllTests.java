@@ -14,6 +14,7 @@ public class AllTests extends TestCase {
 		TestSuite suite = new TestSuite();
 		//suite.addTest(Test_Venues.suite());
 		suite.addTest(Test_Address.suite());
+		suite.addTest(Test_PhoneNumber.suite());
 		//suite.addTest(Test_Tickets.suite());
 		return suite;
 	}
