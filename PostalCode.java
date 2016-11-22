@@ -1,3 +1,4 @@
+package domain;
 import java.util.Scanner;
 
 public class PostalCode {
@@ -67,7 +68,7 @@ public class PostalCode {
 		postalCode = st;
 	}
 
-	public String GetPostalCode() {
+	public String toString() {
 		return postalCode;
 	}
 
@@ -78,7 +79,7 @@ public class PostalCode {
 		a = input.nextLine();
 		PostalCode p1 = new PostalCode(a);
 
-		System.out.println("Postal Code:  " + p1.GetPostalCode());
+		System.out.println("Postal Code:  " + p1.toString());
 
 	}
 }

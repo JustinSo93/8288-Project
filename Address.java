@@ -26,6 +26,17 @@ public class Address {
 		this.provinceState = "";
 		this.country = "";
 	}
+	
+	@Override
+	public String toString() {
+		if (this.street.equals(null)){
+			return "You need to provide a street name";
+		}
+		else{
+		return   streetNumber + " "  + street + " " +city+" " 
+				+ postalCode.toString()  +" " + provinceState + " "+ country ;
+		}
+	}
 	/**
 	 * @return the streetNumber
 	 */
