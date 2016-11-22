@@ -22,6 +22,7 @@ private TicketModel ticketmodel;
 	}
 	
 	public Tickets (double price, String seat, boolean isSold, ScheduledConcert sC){
+		ticketmodel = new TicketModel();
 		ticketmodel.setPrice(price);
 		ticketmodel.setSeat(seat);
 		ticketmodel.setIsSold(isSold);
