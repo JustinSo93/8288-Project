@@ -16,9 +16,7 @@ public class Test_Address extends TestCase{
 
 		protected void tearDown() throws Exception { System.out.println("Test_Address End");	}
 
-	 	/**
-	 	 * Test the constructors and make sure ShannonsController is being accessed properly
-	 	 */
+	 
 		public void testConstructors() {
 		      System.out.println("\tExecuting Test_Address.testConstructors");
 				address = new Address();
@@ -27,10 +25,7 @@ public class Test_Address extends TestCase{
 				
 			}
 		
-		/**
-		 * Test the accessors (my getters) to make sure ShannonsController is being accessed properly.
-		 * If it works than Shannons Theorem is accessing ShannonsController properly.
-		 */
+		
 		public void testAccessors() {
 	      System.out.println("\tExecuting Test_ShannonsController.testAccessors");
 	      address = new Address();
@@ -45,11 +40,6 @@ public class Test_Address extends TestCase{
 			
 		}
 
-
-		/**
-		 * Test the mutators (my setters) to make sure ShannonsController is being accessed properly.
-		 * If it works than Shannons Theorem is accessing ShannonsController properly.
-		 */
 		public void testMutators() {
 	      System.out.println("\tExecuting Test_ShannonsController.testMutators");
 	      address = new Address();
@@ -83,10 +73,7 @@ public class Test_Address extends TestCase{
 
 		}
 
-		/**
-		 * Testing behaviors to make sure ShannonsController is being accessed properly.
-		 * If it max data rate is calculated with the numbers I set than Shannons Theorem
-		 * is accessing ShannonsController properly. **/
+	
 		 
 		public void testBehaviours() {
 	      System.out.println("\tExecuting Test_ShannonsController.testConstructors");
