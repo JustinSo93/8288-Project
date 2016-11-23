@@ -20,42 +20,7 @@ public class Customer extends Person{
 		super(fName, lName, pn, address, emailAddress );
 	}
 	
-	public void browseTickets(ScheduledConcert sc){
-		Object [] columnNames = {"Ticket Seat", "Price"};
-		Object[][] data = new Object[sc.ticketList.size()][2];
-		for (int i = 0; i< sc.ticketList.size(); i++){
-			System.out.println("ticketlist size: " + sc.ticketList.size());
-			for (int j = 0; j<2; j++){
-				if (j%2 ==1){
-					DecimalFormat df = new DecimalFormat("#.00");
-					data[i][j] = "$ " + df.format(sc.ticketList.get(i).getPrice());
-					System.out.println("i = " + i + " j = " + j + "dataij = " + data[i][j]);
-				}
-				else{
-					data[i][j] = sc.ticketList.get(i).getSeat();
-					
-					System.out.println("i = " + i + " j = " + j + "dataij = " + data[i][j]);
-				}
-			}
-		}
-		JTable table = new JTable(data, columnNames);
-		
-        table.setFillsViewportHeight(true);
- 		JFrame frame = new JFrame("Available Tickets");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
-		JScrollPane sp = new JScrollPane(table);
-		
-		JPanel panel = new JPanel();
-		panel.add(sp);
-		
-		frame.add(panel);
-		frame.pack();
-		frame.setVisible(true);
-		
-		
-		
-	}
 	
 	public Purchase createPurchase (String currency, ArrayList<Tickets> t){
 		double amount = 0;
