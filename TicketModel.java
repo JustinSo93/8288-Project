@@ -1,5 +1,4 @@
 package domain;
-
 import javax.swing.JOptionPane;
 
 public class TicketModel {
@@ -7,10 +6,27 @@ public class TicketModel {
 	private double price;
 	private String seat;
 	private boolean isSold;
+	private ScheduledConcert sC;
 
 
 
 
+
+
+	/**
+	 * @return the sC
+	 */
+	public ScheduledConcert getsC() {
+		return sC;
+	}
+
+
+	/**
+	 * @param sC the sC to set
+	 */
+	public void setsC(ScheduledConcert sC) {
+		this.sC = sC;
+	}
 
 
 	/**
@@ -25,7 +41,14 @@ public class TicketModel {
 	 * @param price the price to set
 	 */
 	public void setPrice(double price) {
-		this.price = price;
+		if (price >0){
+			this.price = price;
+		}else{
+			while(price<0){
+				String priceString = JOptionPane.showInputDialog("Enter the price of ticket: ");
+				this.price = Double.parseDouble(priceString);
+			}
+		}
 	}
 	
 	public void setPrice(){
@@ -53,5 +76,9 @@ public class TicketModel {
 
 	public void setIsSold(boolean a){
 		this.isSold = a;
+	}
+	
+	public boolean getIsSold(){
+		return this.isSold;
 	}
 }
