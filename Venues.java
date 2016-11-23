@@ -22,29 +22,25 @@ public class Venues {
 	
 	}
 	
-	public Venues (Address a, int s, int n){
+	public Venues (Address a, int s, int n, PhoneNumber p){
 		this.address = a;
 		this.seatingCapacity = s;
 		this.numberOfRows = n;
+		this.phoneNumber = p;
 
 	}
 	
-	/**
-	 * @return the seating_capacity
-	 */
-	public int getseatingCapacity() {
-		return seatingCapacity;
-	}
+
 	
 	
 	/**
 	 * @param seating_capacity the seating_capacity to set
 	 */
-	public void setseatingCapacity(int seatingCapacity) {
-		if (seatingCapacity>0)
+	public void setSeatingCapacity(int seatingCapacity) {
+		if (seatingCapacity>this.numberOfRows)
 			this.seatingCapacity = seatingCapacity;
 		else{
-			while(seatingCapacity <0){
+			while(seatingCapacity < this.numberOfRows){
 				String s = JOptionPane.showInputDialog("Enter a number greater than 0");
 				seatingCapacity = Integer.parseInt(s);
 			}
@@ -80,9 +76,7 @@ public class Venues {
 	/**
 	 * @param seatingCapacity the seatingCapacity to set
 	 */
-	public void setSeatingCapacity(int seatingCapacity) {
-		this.seatingCapacity = seatingCapacity;
-	}
+	
 
 	/**
 	 * @return the numberOfRows
