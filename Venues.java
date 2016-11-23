@@ -17,16 +17,16 @@ public class Venues {
 	public Venues(){
 		this.address = new Address();
 		this.seatingCapacity = 0;
-		
+		this.phoneNumber = new PhoneNumber("0000000000");
 		this.numberOfRows = 0;
-		this.venueTickets = new ArrayList<Tickets>();
+	
 	}
 	
-	public Venues (Address a, int s, int n, ArrayList<Tickets> v){
+	public Venues (Address a, int s, int n){
 		this.address = a;
 		this.seatingCapacity = s;
 		this.numberOfRows = n;
-		this.venueTickets = v;
+
 	}
 	
 	/**
@@ -116,7 +116,9 @@ public class Venues {
 	}
 
 	public static void main(String[] args){
-		
+		Venues v = new Venues();
+		System.out.println(v.address.toString());
+		System.out.println(v.getPhoneNumber().toString());
 		
 	}
 
