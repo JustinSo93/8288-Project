@@ -9,7 +9,7 @@ public class Venues {
 	protected int seatingCapacity;
 	
 	protected int numberOfRows;
-	protected ArrayList<Tickets> venueTickets = new ArrayList<Tickets>();
+	
 	
 	protected PhoneNumber phoneNumber;
 	
@@ -20,6 +20,13 @@ public class Venues {
 		
 		this.numberOfRows = 0;
 		this.venueTickets = new ArrayList<Tickets>();
+	}
+	
+	public Venues (Address a, int s, int n, ArrayList<Tickets> v){
+		this.address = a;
+		this.seatingCapacity = s;
+		this.numberOfRows = n;
+		this.venueTickets = v;
 	}
 	
 	/**
@@ -91,19 +98,8 @@ public class Venues {
 		this.numberOfRows = numberOfRows;
 	}
 
-	/**
-	 * @return the venueTickets
-	 */
-	public ArrayList<Tickets> getVenueTickets() {
-		return venueTickets;
-	}
 
-	/**
-	 * @param venueTickets the venueTickets to set
-	 */
-	public void setVenueTickets(ArrayList<Tickets> venueTickets) {
-		this.venueTickets = venueTickets;
-	}
+
 
 	/**
 	 * @return the phoneNumber
