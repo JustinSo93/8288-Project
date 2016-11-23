@@ -15,7 +15,8 @@ public class AllTests extends TestCase {
 		//suite.addTest(Test_Venues.suite());
 		suite.addTest(Test_Address.suite());
 		suite.addTest(Test_PhoneNumber.suite());
-		//suite.addTest(Test_Tickets.suite());
+		suite.addTest(Test_Tickets.suite());
+		suite.addTest(Test_AccompID.suite());
 		return suite;
 	}
 
