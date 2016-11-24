@@ -1,3 +1,5 @@
+
+
 package domain;
 
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ public class Composition {
 	private String compositionName;
 	private ArrayList<Movement> movement;
 	private ArrayList<Soloist> soloist;
-	private Composer composer;
+	private String composerName;
 	
 	public Composition(){
 		
@@ -53,12 +55,12 @@ public class Composition {
 		this.soloist = soloist;
 	}
 	
-	public Composer getComposer(){
-		return composer;
+	public String getComposer(){
+		return composerName;
 		
 	}
 	
-	public void setComposer(Composer composer){
-		this.composer = composer;
+	public void setComposer(String composerName){
+		this.composerName = composerName;
 	}
 }
