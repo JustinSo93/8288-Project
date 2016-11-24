@@ -1,26 +1,24 @@
 package domain;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.ScrollPane;
-import java.text.DecimalFormat;
+
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-
 public class Customer extends Person{
+	
+	protected String username;
+	protected String password;
+	protected ID customerID;
 	
 	public Customer (){
 		super();
 	}
 	public Customer(String fName, String lName, PhoneNumber pn, Address address, String emailAddress  ){
 		super(fName, lName, pn, address, emailAddress );
+		this.setID();
 	}
 	
-	
+	public void setID(){
+		this.customerID = IDFactory.getID("C");
+	}
 	
 	public Purchase createPurchase (String currency, ArrayList<Tickets> t){
 		double amount = 0;
@@ -61,7 +59,7 @@ public class Customer extends Person{
 		ScheduledConcert sc = new ScheduledConcert();
 		sc.generateTickets();
 		Customer c = new Customer();
-		c.browseTickets(sc);
+		
 		
 	}
 	
