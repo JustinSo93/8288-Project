@@ -10,6 +10,7 @@ public class Customer extends Person{
 	
 	public Customer (){
 		super();
+		this.setID();
 	}
 	public Customer(String fName, String lName, PhoneNumber pn, Address address, String emailAddress  ){
 		super(fName, lName, pn, address, emailAddress );
