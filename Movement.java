@@ -2,17 +2,18 @@ package domain;
 
 public class Movement {
 
-	private int id;
-	private String movementName;
 	
-	public int getId(){
-		return id;
-		
+	protected String movementName;
+	
+	public Movement(){
+		this.movementName="";
 	}
 	
-	public void setId(int id){
-		this.id = id;
+	public Movement(String m){
+		this.movementName=m;
 	}
+	
+	
 	
 	public String getMovementName(){
 		return movementName;
