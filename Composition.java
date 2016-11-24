@@ -1,11 +1,10 @@
 
-
 package domain;
 
 import java.util.ArrayList;
 
 public class Composition {
-	private int id;
+	
 	private String compositionName;
 	private ArrayList<Movement> movement;
 	private ArrayList<Soloist> soloist;
@@ -13,18 +12,14 @@ public class Composition {
 	
 	public Composition(){
 		
-		movement = new ArrayList<>();
-		soloist = new ArrayList<>();
+		this.movement = new ArrayList<>();
+		this.soloist = new ArrayList<>();
+		this.compositionName="";
+		this.composerName="";
+		
 		
 	}
-	public int getId(){
-		return id;
-		
-	}
-	
-	public void setId(int id){
-		this.id = id;
-	}
+
 	
 	public String getCompositionName(){
 		return compositionName;
