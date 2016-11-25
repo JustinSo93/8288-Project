@@ -3,7 +3,7 @@ package symphonytest;
 import junit.framework.*;
 
 /**
- * JUnit test class to execute all JUNIT tests for the "Shannons Theorem" Lab3.
+ * JUnit test class to execute all JUNIT tests for "Symphony".
  *
  */
 public class AllTests extends TestCase {
@@ -16,8 +16,7 @@ public class AllTests extends TestCase {
 		suite.addTest(Test_Address.suite());
 		suite.addTest(Test_PhoneNumber.suite());
 		suite.addTest(Test_Tickets.suite());
-		suite.addTest(Test_AccompID.suite());
-		suite.addTest(Test_AccompID.suite());
+		suite.addTest(Test_AccompID.suite());;
 		suite.addTest(Test_ConductorID.suite());
 		suite.addTest(Test_Customer.suite());
 		suite.addTest(Test_CustomerID.suite());
