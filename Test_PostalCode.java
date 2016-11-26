@@ -22,7 +22,7 @@ public class Test_PostalCode extends TestCase {
 	public void testConstructors() {
 		System.out.println("\tExecuting Test_PostalCode.testConstructors");
 		PostalCode postalCode = new PostalCode("k1g3n9");
-		assertNotNull("\t\tTest_Address.testConstructors: Address is null", postalCode);
+		assertNotNull("\t\tTest_Address.testConstructors: Address is  null", postalCode);
 
 
 	}
