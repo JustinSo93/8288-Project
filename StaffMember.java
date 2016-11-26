@@ -2,12 +2,27 @@ package domain;
 
 import java.util.ArrayList;
 
+/**
+ * StaffMember Class extend to Person class with it's all functionality and 
+ * this class is used for creating staffmember with specific staffID and job and 
+ * ADD this new staffMember into StaffShows list.
+ * @author Nirav
+ *
+ */
 public class StaffMember extends Person{
 
+	/**
+	 * @param job is type of String
+	 * @param staffShows is type of arrayList of ScheduledConcert
+	 * @param staffID is type of ID
+	 */
 	String job;
 	ArrayList<ScheduledConcert>staffShows;
 	ID staffID;
 	
+	/**
+	 * Default Constructor of StaffMember Class.
+	 */
 	public StaffMember(){
 		super();
 		this.job = "";
@@ -15,6 +30,11 @@ public class StaffMember extends Person{
 		this.setStaffID();
 	}
 	
+	/**
+	 * Parameterized Constructor of StaffMember class.
+	 * which is used to set parameter job, staffshows, and staffID. 
+	 * and other parameter is set by calling super() method of class Person
+	 */
 	public StaffMember(String fName, String lName, PhoneNumber phone, Address address, String emailAddress, String job, ArrayList<ScheduledConcert>staffShows) {
 		super(fName, lName, phone, address, emailAddress);
 		this.job = job;
@@ -26,46 +46,66 @@ public class StaffMember extends Person{
 	
 
 		
-
+		/**
+		 * getter method for get staffID attribute.
+		 * @return staffID of type ID
+		 * 
+		 */
 		public ID getStaffID() {
 			
 			return staffID;
 		}
 
-
+		/**
+		 * setter method for set staffID attribute.
+		 *
+		 */
 		public void setStaffID() {
 			 staffID = IDFactory.getID("ST");
 		}
 	
 		
-		
+		/**
+		 * getter method for job attribute, used to get job.
+		 * @return job as string.
+		 */
 		public String getJob() {
 			return job;
 		}
 
 
-
-
+			
+		/**
+		 * setter method for job attribute, used to set job.
+		 */
 		public void setJob(String job) {
 			this.job = job;
 		}
 
 
 
-
+		/**
+		 * getter method for staffShows attribute, used to get staffshows 
+		 * @return staffShows as array list of scheduledConcert. 
+		 */
 		public ArrayList<ScheduledConcert> getStaffShows() {
 			return staffShows;
 		}
 
 
 
-
+		/**
+		 * setter method for staffshows attribute, used to set staffshows.
+		 */
 		public void setStaffShows(ArrayList<ScheduledConcert> staffShows) {
 			this.staffShows = staffShows;
 		}
 
 
-
+		/**
+		 * toString method that is used to display all information about staff 
+		 * like name, address, phone number, job, shows
+		 */
 
 		@Override
 		public String toString() {
