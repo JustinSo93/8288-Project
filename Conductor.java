@@ -16,11 +16,11 @@ public class Conductor extends Person{
 	/** Constructor Conductor initializes variable.*/
 	Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, 
 			String emailAddress, String instrument, String instrumentGroup, 
-			ArrayList<String> shows) {
+			ArrayList<ScheduledConcert> shows) {
 		super(firstName, lastName, phoneNumber, address, emailAddress);
 		this.instrumentName =instrument;
 		this.instrumentGroup =instrumentGroup;
-		this.shows = shows;
+		this.ScheduledConcerts = shows;
 		this.emailAddress = emailAddress;
 		this.setConductorID();	
 	}
@@ -66,9 +66,13 @@ public class Conductor extends Person{
 	 */
 	@Override
 	public String toString() {
+		String ScheduledConcertsString = new String();
+		for (int i = 0; i < ScheduledConcerts.size();i++){
+			ScheduledConcertsString = ScheduledConcertsString.concat(ScheduledConcerts.get(i).toString());
+		}
 		return "\nID: " + this.conductorID.toString() + ", name: " + firstName + " " + lastName + ", \naddress:  " + address.toString()
 		+ ", \nphone number: " + phoneNumber + ", \nInstrument group: " + instrumentGroup
-		+ ", Instrument name =" + instrumentName + "\nConcerts: " +shows + "\n*****************************************************\n ";
+		+ ", Instrument name =" + instrumentName + "\nConcerts: " +ScheduledConcertsString + "\n*****************************************************\n ";
 	}
 	
 	/* ATTRIBUTES ----------------------------------------------------- */
@@ -78,9 +82,9 @@ public class Conductor extends Person{
 	/** The attribute shows instrument name as String */
 	String instrumentName;
 	
-	/** The attribute shows insturment group as String  */
+	/** The attribute shows instrument group as String  */
 	String instrumentGroup;
 	
-	/** The attribute shows shows as ArrayList<String>*/
-	ArrayList<String> shows;
+	/** The attribute shows shows as ArrayList<ScheduledConcert>*/
+	ArrayList<ScheduledConcert> ScheduledConcerts;
 }
