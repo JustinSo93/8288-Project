@@ -1,13 +1,33 @@
 package domain;
 
+import java.util.ArrayList;
+
 public class Refund  extends FinancialTransaction {
 
 	
+	
+	public Refund(){
+		super();
+	}
+	
+	public Refund (String currency, ScheduledConcert sC, double amount) {
+		super(currency, sC, amount);
+	}
+	
+	public Refund(String currency, ArrayList<Tickets> t){
+		this.currency = currency;
+		this.sC = t.get(0).getScheduledConcert();
+		this.setTransactionID();
+		this.calculateAmount(t);
+		this.source = this.sC;
+		
+		
+	}
 	@Override
 	public void setSource(Object s) throws ClassCastException{
 		try{
-			if (source instanceof Venues)
-			this.source = (Venues) s;
+			if (source instanceof ScheduledConcert)
+			this.source = (ScheduledConcert) s;
 		}
 		catch (ClassCastException e){
 			e.printStackTrace();
@@ -17,8 +37,8 @@ public class Refund  extends FinancialTransaction {
 	@Override
 	public Object getSource() throws ClassCastException{
 		try{
-			if (source instanceof Venues)
-			this.source = (Venues) this.source;
+			if (source instanceof ScheduledConcert)
+			this.source = (ScheduledConcert) this.source;
 		} catch(ClassCastException e){
 			e.printStackTrace();
 		}
