@@ -12,6 +12,7 @@ public class Soloist extends Person {
 		super();
 		this.instrumentName = "";
 		this.instrumentGroup = "";
+		this.compositionsDate = new ArrayList<CompLastDatePlayed>();
 		this.setSoloistID();
 	}
 	/** Fully parameterized constructor */
@@ -51,6 +52,14 @@ public class Soloist extends Person {
 		return instrumentName;
 	}
 	
+	/**
+	 * This method returns the compositionDate
+	 * @return compositionDate
+	 */
+	public ArrayList<CompLastDatePlayed> getcompositionsDate(){
+		return this.compositionsDate;
+	}
+	
 	/* MODIFIERS ----------------------------------------------------- */
 	/**
 	 * This void method sets the soloistID
@@ -74,6 +83,14 @@ public class Soloist extends Person {
 	public void setInstrumentName(String instrumentName) {
 		this.instrumentName = instrumentName;
 	}
+	
+	/**
+	 * This void method sets the compositionsDate
+	 * @param cldp 
+	 */
+	public void setCompositionDate (ArrayList<CompLastDatePlayed> cldp){
+		this.compositionsDate = cldp;
+	}
 	/* HELPER METHODS	--------------------------------------------------	*/
 	/**
 	 * This method returns a String and override the Object toString() method. Prints out all relevant information
@@ -86,6 +103,8 @@ public class Soloist extends Person {
 		+ ", instrument name: " + instrumentName + "\nCompositions and last date played: " + compositionsDate.toString() +
 		"\n***************************************************** \n ";
 	}
+	
+	
 	
 	/* ATTRIBUTES ----------------------------------------------------- */
 	/** compositionsDate is of type ArrayList<CompLastDatePlayed>*/
