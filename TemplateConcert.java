@@ -38,6 +38,22 @@ public class TemplateConcert {
 		return this.conductor;
 	}
 	
+	/**
+	 * This method returns the list of accompanists
+	 * @return listOfAccompanists
+	 */
+	public ArrayList<Accompanist> getListOfAccompanists(){
+		return this.listOfAccompanists;
+	}
+	
+	/**
+	 * This method returns the list of compositions
+	 * @return listOfCompositions
+	 */
+	public ArrayList<Composition> getListOfCompositions(){
+		return this.listOfCompositions;
+	}
+	
 	/* MODIFIERS ----------------------------------------------------- */
 	
 	/** Void method which adds a composition to the ArrayList of compositions*/
@@ -68,7 +84,7 @@ public class TemplateConcert {
 		}
 	}
 	
-
+	
 	/** Void method which sets the Conductor for the class*/
 	public void setConductor (Conductor c){
 		this.conductor = c;
