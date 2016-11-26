@@ -1,10 +1,10 @@
-package Test_p;
+package symphonytest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import p.PostalCode;
+import domain.PostalCode;
 
 /**
  * Test_PostalCode class is used for testing of PostalCode class. it check and

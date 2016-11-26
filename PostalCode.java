@@ -1,10 +1,22 @@
 package domain;
-import java.util.Scanner;
 
+import java.util.Scanner;
+/**
+ * This PostalCode Class is used in Address class. 
+ * it is used for to insert, set, get valid verified postal code of Canada.
+ * 
+ * @author Nirav
+ *
+ */
 public class PostalCode {
 	String postalCode;
 	static String msg;
-
+/**
+ * Parameterized PostalCode constructor that used for take input for postal code.
+ * and set postal code by SetPostalCode() method after verifying valid postal code using
+ * checkPostalCode("string postalCode") method. 
+ * @param a
+ */
 	public PostalCode(String a) {
 		String postalCodeConstructor = a;
 		if (checkPostalCode(postalCodeConstructor) == true) {
@@ -16,6 +28,12 @@ public class PostalCode {
 
 	}
 
+	/**
+	 * This Boolean checkPostalCode(String postal) method is used to check and verify valid postal code 
+	 * by comparing with all valid condition.
+	 * @param postal
+	 * @return true or false
+	 */
 	public static boolean checkPostalCode(String postal) {
 		if (postal == null || postal.isEmpty()) {
 			msg = "Empty postal code";
@@ -63,14 +81,31 @@ public class PostalCode {
 		}
 		return true;
 	}
-
+	
+	
+	/**Setter method of PostalCode class is used for set 
+	 * 
+	 * @param st
+	 */
 	public void SetPostalCode(String st) {
 		postalCode = st;
 	}
 
+	/**
+	 * Getter method of PostalCode class is used for Get valid postal code 
+	 * @return postalCode
+	 */
+	public String GetPostalCode() {
+		return postalCode;
+	}
+	
+	/**
+	 * toString method of PostalCode Class is used for return valid postal code as string. 
+	 */
 	public String toString() {
 		return postalCode;
 	}
+
 
 	public static void main(String[] args) {
 		String a;
