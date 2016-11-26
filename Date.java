@@ -2,26 +2,6 @@ package domain;
 
 import javax.swing.JOptionPane;
 
-public class Date {
-
-private int day;
-private int month;
-private int year;
-	
-	
-	public Date (){
-		this.day =0;
-		this.month = 0;
-		this.year = 0;
-	}
-	
-	public Date(int d, int m, int y){
-		this.day = d;
-		this.month = m;
-package domain;
-
-import javax.swing.JOptionPane;
-
 /**
  * ConductorID class create conductorID as a String
  * @author Tyler, Heesook, Justin
