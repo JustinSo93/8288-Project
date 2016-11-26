@@ -1,59 +1,109 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
+/**This ConcertSeason class will contain all the concerts in an array, along with as Start Date and End Date.
+ * 
+ * @author Tyler Woyiwada, Justin So
+ *
+ */
 public class ConcertSeason {
-	
-	private ArrayList<VenueDate> venuedate = new ArrayList<VenueDate>();
-	
-	public class VenueDate{
-		private Venues venue;
-		private Date date;
-		
-		public VenueDate(Venues venue, Date date){
-			this.venue = venue;
-			this.date = date;
-		}
-		
-		public String toString(){
-			return venue+" "+date;
-		}
-		public Venues getVenue(){
-			return venue;
-		}
-		
-		public Date getDate(){
-			return date;
-		}
-		
-	}
-	
-	public void addVenueDate(Venues v, Date d){
-		VenueDate vd = new VenueDate(v,d);
-		venuedate.add(vd);
-	}
-	
-	public void removeVenueDate(Venues v, Date d){
-		for (int i = 0 ; i < venuedate.size(); i++){
-			if (venuedate.get(i).getVenue().equals(v)&& venuedate.get(i).getDate()==d){
-				venuedate.remove(i);
-				System.out.println("Venue+date removed");
-			}
-		}
-		
-	}
-	
-	public void printVenueDates(){
-		for (int i = 0; i<venuedate.size();i++){
-			System.out.println(venuedate.get(i).toString());
-		}
-	}
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 
-	}
+/**
+ * empty constructor.
+ */
+public ConcertSeason(){}
+/**
+ * attributes within the class.
+ * @param ArrayList<ScheduledConcert>concerts
+ * @param Date startDate
+ * @param Date endDate
+ */
+private ArrayList<ScheduledConcert> concerts = new ArrayList<ScheduledConcert>();
+private Date startDate;
+private Date endDate;
 
+/**
+ * public get method that returns the arraylist of concerts in the season
+ * @return concerts
+ */
+	public ArrayList<ScheduledConcert> getConcerts() {
+	return concerts;
 }
+/**
+ * public set method that sets the value for concerts
+ * @param concerts
+ */
+public void setConcerts(ArrayList<ScheduledConcert> concerts) {
+	this.concerts = concerts;
+}
+/**
+ * public get method that returns the startDate of the season
+ * @return Date startDate
+ */
+public Date getStartDate() {
+	return startDate;
+}
+/**
+ * public set method that sets the value for startDate
+ * @param Date startDate
+ */
+public void setStartDate(Date startDate) {
+	this.startDate = startDate;
+}
+/**
+ * public get method that returns the endDate of the season
+ * 
+ * @return endDate
+ */
+public Date getEndDate() {
+	return endDate;
+}
+/**
+ * public set method that sets the value for endDate
+ * @param Date endDate
+ */
+public void setEndDate(Date endDate) {
+	this.endDate = endDate;
+}
+
+
+/**
+ * public method that will set the type of concert by checking if the date of the concert is before or after
+ * the current date.  		
+ *@param ScheduledConcert x
+ *@param Calendar c
+ *@param int year
+ *@param int month
+ *@param int dayOfMonth
+ *@param Date dateSpecified
+ *@param PerformedConcert performed
+*/
+public void setConcertType(ScheduledConcert x){
+		Calendar c = Calendar.getInstance();
+
+		
+		c.set(Calendar.HOUR_OF_DAY, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		c.set(Calendar.MILLISECOND, 0);
+		java.util.Date today = c.getTime();
+		int year = x.getVenueDate().getDate().getYear();
+		int month = x.getVenueDate().getDate().getYear();
+		int dayOfMonth = x.getVenueDate().getDate().getDay();
+        c.set(Calendar.YEAR, year);
+		c.set(Calendar.MONTH, month);
+		c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+		java.util.Date dateSpecified = c.getTime();
+        if (dateSpecified.before(today)) {
+		  PerformedConcert performed = new PerformedConcert(x.listOfCompositions, x.getConductor(),x.listOfAccompanists, x.getVenueDate(), x.getTicketList(), 0 );
+		  performed.calculate();
+		  concerts.add(performed);
+		  concerts.remove(x);
+		} else {
+		  concerts.add(x);
+		}
+		}
+	}
