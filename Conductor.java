@@ -13,8 +13,20 @@ import java.util.ArrayList;
 public class Conductor extends Person{
 	
 	/* CONSTRUCTORS -------------------------------------------------- */
+	
+	/** Empty constructor */
+	public Conductor(){
+		this.firstName="";
+		this.lastName = "";
+		this.phoneNumber = new PhoneNumber("0000000000");
+		this.address = new Address();
+		this.emailAddress = "";
+		this.instrumentName = "";
+		this.instrumentGroup = "";
+	}
+	
 	/** Constructor Conductor initializes variable.*/
-	Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, 
+	public Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, 
 			String emailAddress, String instrument, String instrumentGroup, 
 			ArrayList<ScheduledConcert> shows) {
 		super(firstName, lastName, phoneNumber, address, emailAddress);
