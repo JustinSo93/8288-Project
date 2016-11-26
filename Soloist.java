@@ -8,6 +8,7 @@ public class Soloist extends Person {
 	ID soloistID;
 	String instrumentName;
 	String instrumentGroup;
+	
 	public Soloist(String firstName, String lastName, PhoneNumber phone, Address address, String emailAddress, String instrument,
 			String instrumentGroup, ArrayList<CompLastDatePlayed> compositionsDate) {
 		super(firstName, lastName, phone, address, emailAddress);
@@ -17,6 +18,13 @@ public class Soloist extends Person {
 		this.compositionsDate = compositionsDate;
 		this.setSoloistID();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Soloist(){
+		super();
+		this.instrumentName = "";
+		this.instrumentGroup = "";
+		this.setSoloistID();
 	}
 	public ID getSoloistID() {
 		
