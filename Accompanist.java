@@ -21,6 +21,17 @@ public class Accompanist extends Person{
 	String instrumentGroup;
 	String instrumentName;
 
+
+
+
+/** Empty constructor */	
+public Accompanist(){
+	super();
+	this.setAccompID();
+	this.instrumentGroup="";
+	this.instrumentName="";
+}
+
 /** Constructor.
  * 
  * @param firstName
