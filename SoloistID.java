@@ -1,3 +1,4 @@
+
 package domain;
 
 public class SoloistID implements ID{
@@ -7,12 +8,12 @@ public class SoloistID implements ID{
 
 			@Override
 			public String createID() {
-						
+				soloCount++;
 						return soloCode.toString();
 			}
 			@Override 
 			public String toString(){
-				soloCount++;
-				return soloCode + soloCount;
+				
+				return soloCode+1 + soloCount;
 			}
 		}
