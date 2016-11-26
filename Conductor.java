@@ -85,6 +85,6 @@ public class Conductor extends Person{
 	/** The attribute shows instrument group as String  */
 	String instrumentGroup;
 	
-	/** The attribute shows shows as ArrayList<ScheduledConcert>*/
+	/** The attribute shows ScheduledConcerts as ArrayList<ScheduledConcert>*/
 	ArrayList<ScheduledConcert> ScheduledConcerts;
 }
