@@ -1,26 +1,55 @@
 package domain;
 
 import java.util.ArrayList;
-
+/**
+ * this Class is a subclass of Person that creates a customer
+ * @author tyyyl
+ *
+ */
 public class Customer extends Person{
 	
+	/**
+	 * attritubes to be used in the class
+	 * @param String username
+	 * @param String password
+	 * @param ID customerID
+	 */
 	protected String username;
 	protected String password;
 	protected ID customerID;
-	
+	/**
+	 * constructor
+	 */
 	public Customer (){
 		super();
 		this.setID();
 	}
+	/**
+	 * overloaded constructor
+	 * @param fName
+	 * @param lName
+	 * @param pn
+	 * @param address
+	 * @param emailAddress
+	 */
 	public Customer(String fName, String lName, PhoneNumber pn, Address address, String emailAddress  ){
 		super(fName, lName, pn, address, emailAddress );
 		this.setID();
 	}
-	
+	/**
+	 * public set method that calls the IDFactory and creates an ID for the customer
+	 * @param ID customerID
+	 */
 	public void setID(){
 		this.customerID = IDFactory.getID("C");
 	}
-	
+	/**
+	 * public method that instantiates a Purchase object and returns it
+	 * @param double amount
+	 * @param String currency
+	 * @param ArrayList<Tickets> t
+	 * @return Purchase p 
+	 */
 	public Purchase createPurchase (String currency, ArrayList<Tickets> t){
 		double amount = 0;
 	
@@ -38,7 +67,13 @@ public class Customer extends Person{
 		p.setSource(this);
 		return p;
 	}
-	
+	/**
+	 * This public method instantiates a refund object and returns it
+	 * @param String currency
+	 * @param ArrayList<Tickets> t
+	 * @param double amount
+	 * @return Refund r
+	 */
 	public Refund createRefund(String currency, ArrayList<Tickets> t){
 		double amount = 0;
 		
@@ -54,17 +89,5 @@ public class Customer extends Person{
 		r.setDestination(this);
 		return r;
 	}
-	
-	
-	public static void main(String[] args) {
-		ScheduledConcert sc = new ScheduledConcert();
-		sc.generateTickets();
-		Customer c = new Customer();
-		
-		
-	}
-	
-	
-	
 
 }
