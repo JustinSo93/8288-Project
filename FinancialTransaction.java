@@ -17,6 +17,7 @@ public abstract class FinancialTransaction {
 		this.source = null;
 		this.destination = null;
 		this.sC = null;
+		this.setTransactionID();
 	}
 	
 	public FinancialTransaction(String currency, ScheduledConcert sC, double amount, Object source, Object destination){
@@ -25,6 +26,7 @@ public abstract class FinancialTransaction {
 		this.amount = amount;
 		this.source = source;
 		this.destination = destination;
+		this.setTransactionID();
 	}
 	
 	public FinancialTransaction(String currency, ScheduledConcert sC, double amount){
