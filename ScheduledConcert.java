@@ -7,12 +7,10 @@ import javax.swing.JOptionPane;
 
 
 
-public class ScheduledConcert  extends TemplateConcert{
+public class ScheduledConcert  extends TemplateConcert {
 
 	protected VenueDate venuedate;
 	protected ArrayList<Tickets> ticketList;
-	
-
 	protected double revenue;
 	
 	public ScheduledConcert(){
@@ -21,16 +19,21 @@ public class ScheduledConcert  extends TemplateConcert{
 		this.ticketList = new ArrayList<Tickets>();
 	}
 	
-	public ScheduledConcert(ArrayList<Composition> lC, ArrayList<Soloist> s, Conductor c, ArrayList<Accompanist> lA, VenueDate vd, ArrayList<Tickets> tL){
-		super(lC,s,c, lA);
+	public ScheduledConcert(ArrayList<Composition> lC, Conductor c, ArrayList<Accompanist> lA, VenueDate vd, ArrayList<Tickets> tL){
+		super(lC,c, lA);
 		this.venuedate = vd;
 		this.ticketList = tL;
 	}
 	
 	public void sellTicket(Tickets ticket){
-		revenue += ticket.getPrice();
-		boolean a = true;
-		ticket.setIsSold(a);
+		if (ticket.getIsSold()==false){
+			revenue += ticket.getPrice();
+			boolean a = true;
+			ticket.setIsSold(a);
+		}
+		else{
+			System.out.println("Ticket has already been sold");
+		}
 	}
 	public void generateTickets ()	{
 		char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'};
@@ -78,6 +81,14 @@ public class ScheduledConcert  extends TemplateConcert{
 			System.out.println("You didn't put a number");
 		}
 		
+	}
+	
+	public void setTicketList(ArrayList <Tickets> t){
+		this.ticketList = t;
+	}
+	
+	public ArrayList<Tickets> getTicketList(){
+		return this.ticketList;
 	}
 	
 	public void removeTickets (Tickets t){
