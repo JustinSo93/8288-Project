@@ -62,7 +62,7 @@ public class Conductor extends Person{
 	
 	/* HELPER METHODS ----------------------------------------------------- */
 	/**
-	 * This method toSting sets the display format for the attributes
+	 * This method toString sets the display format for the attributes
 	 */
 	@Override
 	public String toString() {
