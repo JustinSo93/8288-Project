@@ -2,9 +2,9 @@ package domain;
 	
 	public class Person{
 		
-		private ID id;
+		protected ID id;
 		protected String firstName;
-		public String lastName;
+		protected String lastName;
 		protected PhoneNumber phoneNumber;
 		protected Address address;
 		protected String emailAddress;
@@ -26,6 +26,13 @@ package domain;
 			this.phoneNumber = phone;
 			this.address = address;
 			this.emailAddress = emailAddress;
+		}
+		public Person(){
+			this.firstName = "";
+			this.lastName = "";
+			this.phoneNumber = new PhoneNumber("");
+			this.address = new Address();
+			this.emailAddress = "";
 		}
 		public ID getID() {
 			return id;
@@ -140,66 +147,6 @@ package domain;
 				return new Person(this);
 			}
 		}
+
 		
 	}
-	
-//	public String name;
-//	public Object personBuilder;
-//	
-//	public Person() {
-//		// TODO Auto-generated constructor stub
-//	}
-//    
-//	// TODO Auto-generated constructor stub
-//
-//	public Person(PersonBuilder personBuilder) {
-//	
-//		// TODO Auto-generated constructor stub
-//	}
-//
-//	public static class PersonBuilder{
-//	private String name;
-//	private String address;
-//	private phoneNumberNumberNumber phoneNumberNumber;
-//	
-//	public PersonBuilder(String name){
-//		this.name = name;
-//	}
-//	
-//	public PersonBuilder address(String s){
-//		address = s;
-//		return this;
-//		
-//	}
-//	public PersonBuilder phoneNumberNumber(phoneNumberNumberNumber p){
-//		phoneNumberNumber = p;
-//		return this;
-//	}
-//	
-//	public Person build(){
-//		return new Person(this);
-//	}
-//	
-//	private void Person(PersonBuilder builder){
-//		address = builder.address;
-//		phoneNumberNumber = builder.phoneNumberNumber;
-//	}
-//
-//	public String getName() {
-//		return name;
-//	}
-//	
-//	public String setName(){
-//		this.name = name;
-//		return name;
-//	}
-//	
-//	@Override
-//	public String toString() {
-//		return  "musicianName=" + name + ", address=" + address
-//				+ ", phoneNumberNumberNumber=" + phoneNumberNumber ;
-//	}
-//}
-//
-
-
