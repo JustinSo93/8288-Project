@@ -40,12 +40,12 @@ public class TemplateConcert {
 	
 	/* MODIFIERS ----------------------------------------------------- */
 	
-	
+	/** Void method which adds a composition to the ArrayList of compositions*/
 	public void addComposition (Composition c){
 		listOfCompositions.add(c);
 	}
 	
-	
+	/** Void method which removes a composition from the ArrayList of compositions*/
 	public void removeComposition(Composition c){
 		for (int i =0; i<listOfCompositions.size();i++){
 			if (listOfCompositions.get(i).getCompositionName() .equals(c.getCompositionName())){
@@ -53,11 +53,13 @@ public class TemplateConcert {
 			}
 		}
 	}
-
+	
+	/** Void method which adds an accompanist to the ArrayList of accompanists*/
 	public void addAccompanist (Accompanist a){
 		listOfAccompanists.add(a);
 	}
 	
+	/** Void method which removes an accompanist from the ArrayList of accompanists*/
 	public void removeAccompanist (Accompanist a){
 		for (int i = 0; i < listOfAccompanists.size();i++){
 			if (listOfAccompanists.get(i).accompID == a.accompID){
@@ -67,7 +69,7 @@ public class TemplateConcert {
 	}
 	
 
-	
+	/** Void method which sets the Conductor for the class*/
 	public void setConductor (Conductor c){
 		this.conductor = c;
 	}
@@ -75,13 +77,13 @@ public class TemplateConcert {
 	/* ATTRIBUTES ----------------------------------------------------- */
 	
 	/** The attribute listOfCompositions is of type ArrayList<Composition> */
-	private ArrayList<Composition> listOfCompositions;
+	protected ArrayList<Composition> listOfCompositions;
 
 	/** The attribute conductor is of type Conductor*/
-	private Conductor conductor;
+	protected Conductor conductor;
 	
 	/** The attribute listOfAccompanists is of type ArrayList<Accompanists>*/
-	private ArrayList<Accompanist> listOfAccompanists;
+	protected ArrayList<Accompanist> listOfAccompanists;
 	
 
 }
