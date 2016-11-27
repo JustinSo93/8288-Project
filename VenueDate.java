@@ -13,9 +13,7 @@ public class VenueDate {
 		this.date = date;
 	}
 	
-	public String toString(){
-		return venue+" "+date;
-	}
+
 	public Venues getVenue(){
 		return venue;
 	}
