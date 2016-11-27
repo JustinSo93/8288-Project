@@ -71,7 +71,7 @@ public class CompLastDatePlayed {
 	}
 /* ATTRIBUTES ----------------------------------------------------- */
 /** The attribute shows lastDatePlayed as a Date */
-Date lastDatePlayed;
+protected Date lastDatePlayed;
 /** The attribute shows composition as a Composition */
-Composition composition;
+protected Composition composition;
 }
