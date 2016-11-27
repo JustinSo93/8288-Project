@@ -36,6 +36,18 @@ public class Conductor extends Person{
 		this.instrumentGroup =instrumentGroup;
 		this.ScheduledConcerts = shows;
 		this.emailAddress = emailAddress;
+		
+		this.setConductorID();	
+	}
+	
+	/** Constructor Conductor initializes variable.*/
+	public Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, 
+			String emailAddress, String instrument, String instrumentGroup) {
+		super(firstName, lastName, phoneNumber, address, emailAddress);
+		this.instrumentName =instrument;
+		this.instrumentGroup =instrumentGroup;
+		this.ScheduledConcerts = shows;
+		this.emailAddress = emailAddress;
 		this.ScheduledConcerts = new ArrayList<ScheduledConcert>();
 		this.setConductorID();	
 	}
