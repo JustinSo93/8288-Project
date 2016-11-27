@@ -11,15 +11,8 @@ import java.util.ArrayList;
  */
 public class StaffMember extends Person{
 
-	/**
-	 * @param job is type of String
-	 * @param staffShows is type of arrayList of ScheduledConcert
-	 * @param staffID is type of ID
-	 */
-	String job;
-	ArrayList<ScheduledConcert>staffShows;
-	ID staffID;
-	
+
+	/* CONSTRUCTORS -------------------------------------------------- */
 	/**
 	 * Default Constructor of StaffMember Class.
 	 */
@@ -44,7 +37,7 @@ public class StaffMember extends Person{
 		// TODO Auto-generated constructor stub
 	}
 	
-
+		/* ACCESSORS ----------------------------------------------------- */
 		
 		/**
 		 * getter method for get staffID attribute.
@@ -55,7 +48,24 @@ public class StaffMember extends Person{
 			
 			return staffID;
 		}
-
+		/**
+		 * getter method for job attribute, used to get job.
+		 * @return job as string.
+		 */
+		public String getJob() {
+			return job;
+		}
+	
+		/**
+		 * getter method for staffShows attribute, used to get staffshows 
+		 * @return staffShows as array list of scheduledConcert. 
+		 */
+		public ArrayList<ScheduledConcert> getStaffShows() {
+			return staffShows;
+		}
+		
+		/* MODIFIERS ----------------------------------------------------- */
+	
 		/**
 		 * setter method for set staffID attribute.
 		 *
@@ -65,13 +75,7 @@ public class StaffMember extends Person{
 		}
 	
 		
-		/**
-		 * getter method for job attribute, used to get job.
-		 * @return job as string.
-		 */
-		public String getJob() {
-			return job;
-		}
+		
 
 
 			
@@ -84,13 +88,6 @@ public class StaffMember extends Person{
 
 
 
-		/**
-		 * getter method for staffShows attribute, used to get staffshows 
-		 * @return staffShows as array list of scheduledConcert. 
-		 */
-		public ArrayList<ScheduledConcert> getStaffShows() {
-			return staffShows;
-		}
 
 
 
@@ -100,7 +97,8 @@ public class StaffMember extends Person{
 		public void setStaffShows(ArrayList<ScheduledConcert> staffShows) {
 			this.staffShows = staffShows;
 		}
-
+		
+		/* HELPER METHODS	--------------------------------------------------	*/
 
 		/**
 		 * toString method that is used to display all information about staff 
@@ -116,5 +114,15 @@ public class StaffMember extends Person{
 		return "\nID: " + this.staffID.toString() + ", name: " + firstName + " " + lastName + ", \naddress:  " + address.toString()
 		+ ", \nphone number: " + this.getphoneNumber() + ", \njob: " + job + 
 		 ", \nShows : " + ScheduledConcertsString + "\n*****************************************************";
-}
+		}
+		
+	/* ATTRIBUTES ----------------------------------------------------- */
+		/**
+	 * @param job is type of String
+	 * @param staffShows is type of arrayList of ScheduledConcert
+	 * @param staffID is type of ID
+	 */
+	protected String job;
+	protected ArrayList<ScheduledConcert>staffShows;
+	protected ID staffID;
 }
