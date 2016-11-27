@@ -36,6 +36,7 @@ public class Conductor extends Person{
 		this.instrumentGroup =instrumentGroup;
 		this.ScheduledConcerts = shows;
 		this.emailAddress = emailAddress;
+		this.ScheduledConcerts = new ArrayList<ScheduledConcert>();
 		this.setConductorID();	
 	}
 
