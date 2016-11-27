@@ -2,7 +2,6 @@ package domain;
 	
 	public class Person{
 		
-		protected ID id;
 		protected String firstName;
 		protected String lastName;
 		protected PhoneNumber phoneNumber;
@@ -33,15 +32,6 @@ package domain;
 			this.phoneNumber = new PhoneNumber("");
 			this.address = new Address();
 			this.emailAddress = "";
-		}
-		public ID getID() {
-			return id;
-		}
-		/**
-		 * @param iD the iD to set
-		 */
-		public void setID(ID id) {
-			id = this.id;
 		}
 		/**
 		 * @return the emailAddress
@@ -116,7 +106,6 @@ package domain;
 			private PhoneNumber phoneNumber;
 			private Address address;
 			private String emailAddress;
-			private domain.ID id;
 			
 			public PersonBuilder (String firstName){
 				this.firstName = firstName;
@@ -139,10 +128,7 @@ package domain;
 				this.emailAddress = emailAddress;
 				return this;
 			}
-			public PersonBuilder ID (ID id){
-				this.id = id;
-				return this;
-			}
+
 			public Person build(){
 				return new Person(this);
 			}
