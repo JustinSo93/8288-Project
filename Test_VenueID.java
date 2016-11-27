@@ -24,7 +24,7 @@ public class Test_VenueID extends TestCase{
 			assertNotNull("\t\tTest_VenueID.testBehaviours: VenueID is null", calc);
 			
 			calc.createID();
-			assertEquals("VEN"+ 1, calc.toString());
+			assertEquals("VEN"+ 0, calc.toString());
 
 			
 		}

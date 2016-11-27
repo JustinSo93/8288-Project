@@ -24,7 +24,7 @@ public class Test_AccompID extends TestCase{
 			assertNotNull("\t\tTest_AccompID.testBehaviours: AccompID is null", calc);
 			
 			calc.createID();
-			assertEquals("ACC"+ 1, calc.toString());
+			assertEquals("ACC"+ 0, calc.toString());
 
 			
 		}

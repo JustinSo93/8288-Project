@@ -25,7 +25,7 @@ public class Test_CustomerID extends TestCase{
 				assertNotNull("\t\tTest_CustomerID.testBehaviours: CustomerID is null", calc);
 				
 				calc.createID();
-				assertEquals("CUS"+ 1, calc.toString());
+				assertEquals("CUS"+ 0, calc.toString());
 
 				
 			}

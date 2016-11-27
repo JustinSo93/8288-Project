@@ -24,7 +24,7 @@ public class Test_TicketID extends TestCase{
 			assertNotNull("\t\tTest_TicketID.testBehaviours: TicketID is null", calc);
 			
 			calc.createID();
-			assertEquals("TIC"+ 1, calc.toString());
+			assertEquals("TIC"+ 0, calc.toString());
 
 			
 		}

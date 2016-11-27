@@ -25,7 +25,7 @@ public class Test_ConductorID extends TestCase{
 				assertNotNull("\t\tTest_ConductorID.testBehaviours: ConductorID is null", calc);
 				
 				calc.createID();
-				assertEquals("CON"+ 1, calc.toString());
+				assertEquals("CON"+ 0, calc.toString());
 
 				
 			}

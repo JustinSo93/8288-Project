@@ -24,7 +24,7 @@ public class Test_TransactionID extends TestCase{
 			assertNotNull("\t\tTest_TransactionID.testBehaviours: TransactionID is null", calc);
 			
 			calc.createID();
-			assertEquals("TRN"+ 1, calc.toString());
+			assertEquals("TRN"+ 0, calc.toString());
 
 			
 		}
