@@ -1,21 +1,46 @@
 package domain;
 
+/**
+ * Subclass of IDFactory that will auto generate an ID key for a Venue.  
+ * @author tyyyl
+ *
+ */
 public class VenueID implements ID{
+/**Variables that form the ID Key.
+ * @param public int musCount
+ * @param public String musCode
+ * 
+ */
+	private int id;
+	String musCode = "VEN";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public VenueID(){
+this.id = musCount++;
 
-	public static int venueCount = 0;
-		String venueCode = "VEN";
-
-		@Override
-		public String createID() {
-					
-					return venueCode.toString();
-		}
+}
+	
+/**
+ * get method for the musCode
+ * @return musCode.toString
+ * 
+ */
+	@Override
+	public String createID() {
+		    
+				return musCode.toString();
+				}
+/**
+ * toString method for the ID code.
+ * @return musCount + musCode toString.
+ */
+	@Override 
+	public String toString(){
 		
-		@Override 
-		public String toString(){
-			venueCount ++;
-			return venueCode + venueCount;
-		}
+		return musCode + id;
 	}
 
-
+	
+}

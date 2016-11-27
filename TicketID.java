@@ -1,38 +1,46 @@
 package domain;
+
 /**
- * This class creates a Ticket ID code 
- * 
- * @author Tyler Woyiwada
+ * Subclass of IDFactory that will auto generate an ID key for an accompanist.  
+ * @author tyyyl
  *
  */
 public class TicketID implements ID{
-	/**
-	 * attributes to be used within the class
-	 * @param String tickCode
-	 * @param int tickCount
-	 */
-	public static int tickCount = 0;
-	String tickCode = "TIC";
-	/**
-	 * public get method that returns tickCode to the toString method
-	 * @param String tickCode
-	 */
+/**Variables that form the ID Key.
+ * @param public int musCount
+ * @param public String musCode
+ * 
+ */
+	private int id;
+	String musCode = "TIC";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public TicketID(){
+this.id = musCount++;
+
+}
+	
+/**
+ * get method for the musCode
+ * @return musCode.toString
+ * 
+ */
 	@Override
 	public String createID() {
-
-		return tickCode.toString();
-	}
-	/**
-	 * public toString method that returns a String version of the TicketID object
-	 * @param String tickCode
-	 * @param int tickCount
-	 * @return tickCode + tickCount
-	 */
+		    
+				return musCode.toString();
+				}
+/**
+ * toString method for the ID code.
+ * @return musCount + musCode toString.
+ */
 	@Override 
 	public String toString(){
-		tickCount++;
-		return tickCode + tickCount;
+		
+		return musCode + id;
 	}
+
+	
 }
-
-

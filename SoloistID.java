@@ -1,38 +1,46 @@
 package domain;
 
 /**
- * This class creates a Soloist ID code 
- * 
- * @author Tyler Woyiwada
+ * Subclass of IDFactory that will auto generate an ID key for an accompanist.  
+ * @author tyyyl
  *
  */
-
 public class SoloistID implements ID{
-	/**
-	 * attributes to be used within the class
-	 * @param String soloCode
-	 * @param int soloCount
-	 */
-	public static int soloCount = 0;
-	String soloCode = "SOL";
-	/**
-	 * public get method that returns soloCode to the toString method
-	 * @param String musCode
-	 */
+/**Variables that form the ID Key.
+ * @param public int musCount
+ * @param public String musCode
+ * 
+ */
+	private int id;
+	String musCode = "SOL";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public SoloistID(){
+this.id = musCount++;
+
+}
+	
+/**
+ * get method for the musCode
+ * @return musCode.toString
+ * 
+ */
 	@Override
 	public String createID() {
-
-		return soloCode.toString();
-	}
-	/**
-	 * public toString method that returns a String version of the SoloistID object
-	 * @param String soloCode
-	 * @param int musCount
-	 * @return soloCode + soloCount
-	 */
+		    
+				return musCode.toString();
+				}
+/**
+ * toString method for the ID code.
+ * @return musCount + musCode toString.
+ */
 	@Override 
 	public String toString(){
-		soloCount++;
-		return soloCode + soloCount;
+		
+		return musCode + id;
 	}
+
+	
 }

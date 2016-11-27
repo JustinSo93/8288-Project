@@ -1,33 +1,46 @@
 package domain;
 
 /**
- * ConductorID class create conductorID as a String
- * @author Tyler, Heesook
+ * Subclass of IDFactory that will auto generate an ID key for a Conductor.  
+ * @author tyyyl
  *
  */
-public class ConductorID implements ID {
-
+public class ConductorID implements ID{
+/**Variables that form the ID Key.
+ * @param public int musCount
+ * @param public String musCode
+ * 
+ */
+	private int id;
 	String musCode = "CON";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public ConductorID(){
+this.id = musCount++;
 
-	/* ACCESSORS	-----------------------------------------------------	*/
-	/**
-	 * Method createID returns conductorID as a String
-	 */
+}
+	
+/**
+ * get method for the musCode
+ * @return musCode.toString
+ * 
+ */
 	@Override
-	public String createID() { return musCode.toString(); }
-
-	/* NORMAL BEHAVIOR ------------------------------------------------- */
-	/**
-	 * Method toString returns ConductoriID with musCode and musCount
-	 */
+	public String createID() {
+		    
+				return musCode.toString();
+				}
+/**
+ * toString method for the ID code.
+ * @return musCount + musCode toString.
+ */
 	@Override 
 	public String toString(){
-		musCount ++;
-		return musCode + musCount;
+		
+		return musCode + id;
 	}
 
-	/* ATTRIBUTES ----------------------------------------------------- */
-	/** The attribute shows musCount as static integer  */
-	public static int musCount;
-
-} /*	End of CLASS:	ConductorID.java			*/
+	
+}

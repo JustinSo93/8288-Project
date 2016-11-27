@@ -11,8 +11,17 @@ public class AccompID implements ID{
  * @param public String musCode
  * 
  */
-	public static int musCount;
+	private int id;
 	String musCode = "ACC";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public AccompID(){
+this.id = musCount++;
+
+}
+	
 /**
  * get method for the musCode
  * @return musCode.toString
@@ -20,6 +29,7 @@ public class AccompID implements ID{
  */
 	@Override
 	public String createID() {
+		    
 				return musCode.toString();
 				}
 /**
@@ -28,8 +38,8 @@ public class AccompID implements ID{
  */
 	@Override 
 	public String toString(){
-		musCount ++;
-		return musCode + musCount;
+		
+		return musCode + id;
 	}
 
 	

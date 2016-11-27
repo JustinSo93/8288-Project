@@ -1,35 +1,46 @@
 package domain;
+
 /**
- * StaffID class implements ID interface.
- * this class is used for create unique ID for new staff member.
- * Example STA1, STA2, STA3 
- * @author Nirav
+ * Subclass of IDFactory that will auto generate an ID key for a Staff Member.  
+ * @author tyyyl
  *
  */
-public class StaffID implements ID {
+public class StaffID implements ID{
+/**Variables that form the ID Key.
+ * @param public int musCount
+ * @param public String musCode
+ * 
+ */
+	private int id;
+	String musCode = "STA";
+    private static int musCount;
+/**
+ * constructor that increments the ID code
+ */
+public StaffID(){
+this.id = musCount++;
 
-			/**
-			 * @param staffCount type of static int with default value "0"
-			 */
-			public static int staffCount = 0;
-				String staffCode = "STA";
+}
+	
+/**
+ * get method for the musCode
+ * @return musCode.toString
+ * 
+ */
+	@Override
+	public String createID() {
+		    
+				return musCode.toString();
+				}
+/**
+ * toString method for the ID code.
+ * @return musCount + musCode toString.
+ */
+	@Override 
+	public String toString(){
+		
+		return musCode + id;
+	}
 
-				/**
-				 * override method CreateID(),
-				 *@return toString of staffCode
-				 */
-				@Override
-				public String createID() {
-							
-							return staffCode.toString();
-				}
-				/**
-				 * override method of toString(),
-				 * @return staffCode+ staffCount as string.
-				 */
-				@Override 
-				public String toString(){
-					staffCount++;
-					return staffCode + staffCount;
-				}
-			}
+	
+}
