@@ -6,6 +6,7 @@ public class VenueDate {
 	
 	public VenueDate(){
 		this.venue = new Venues();
+		this.date = new Date();
 		
 	}
 	public VenueDate(Venues venue, Date date){
