@@ -117,14 +117,14 @@ public class Conductor extends Person{
 	
 	/* ATTRIBUTES ----------------------------------------------------- */
 	/** The attribute shows conductID as ID */
-	ID conductorID;
+	protected ID conductorID;
 	
 	/** The attribute shows instrument name as String */
-	String instrumentName;
+	protected String instrumentName;
 	
 	/** The attribute shows instrument group as String  */
-	String instrumentGroup;
+	protected String instrumentGroup;
 	
 	/** The attribute shows ScheduledConcerts as ArrayList<ScheduledConcert>*/
-	ArrayList<ScheduledConcert> ScheduledConcerts;
+	protected ArrayList<ScheduledConcert> ScheduledConcerts;
 }
