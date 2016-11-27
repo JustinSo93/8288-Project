@@ -108,11 +108,11 @@ public class Soloist extends Person {
 	
 	/* ATTRIBUTES ----------------------------------------------------- */
 	/** compositionsDate is of type ArrayList<CompLastDatePlayed>*/
-	ArrayList<CompLastDatePlayed> compositionsDate;
+	protected ArrayList<CompLastDatePlayed> compositionsDate;
 	/** soloistID is a unique identifier for each soloist. It is of type ID */
-	ID soloistID;
+	protected ID soloistID;
 	/** Attribute instrumentName is of type String */
-	String instrumentName;
+	protected String instrumentName;
 	/** Attribute instrumentGroup is of type String */
-	String instrumentGroup;
+	protected String instrumentGroup;
 }
