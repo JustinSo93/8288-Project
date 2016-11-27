@@ -6,6 +6,15 @@ package domain;
  * @author Tyler Woyiwada
  *
  */
+
+/**
+ * attributes to be used by the class
+ * @param String username
+ * @param String password
+ */
+ 	   protected String username;
+	   protected String password;
+
 public class Login {
 /**
  * 
@@ -13,13 +22,6 @@ public class Login {
  */
 public Login(){}
  
-/**
- * attributes to be used by the class
- * @param String username
- * @param String password
- */
- 	    String username;
-	    String password;
 /**
  * public method that checks the validity of the password and login and returns a corresponding
  * @return String "You are logged in"
