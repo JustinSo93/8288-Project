@@ -63,7 +63,7 @@ public class Customer extends Person{
 		//System.out.println(amount);
 		t.get(0).getScheduledConcert().revenue += amount;
 		
-		
+		p.setDestination(t.get(0).getScheduledConcert());
 		p.setSource(this);
 		return p;
 	}
@@ -85,7 +85,7 @@ public class Customer extends Person{
 		r.setAmount(amount);
 		
 		t.get(0).getScheduledConcert().revenue -= amount;
-		
+		r.setSource(t.get(0).getScheduledConcert());
 		r.setDestination(this);
 		return r;
 	}
