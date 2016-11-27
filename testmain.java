@@ -27,8 +27,15 @@ VenueDate christmasCarolOttawa = new VenueDate(nac, new Date(03,21,2017));
 Tickets tick001 = new Tickets(99.99, "AA55", true, null);
 ArrayList<Tickets>ticks = new ArrayList<Tickets>();
 ticks.add(tick001);
+
 ScheduledConcert aChristmasCarol = new ScheduledConcert(compositions, jack, accomps, christmasCarolOttawa, ticks);
-		
+for (int i = 0; i < ticks.size(); i++){
+ticks.get(0).setScheduledConcert(aChristmasCarol);
+}
+
+ArrayList<ScheduledConcert> listofSC = new ArrayList<ScheduledConcert>();
+listofSC.add(aChristmasCarol);	
+jack.setScheduledConcerts(listofSC);
 System.out.print(aChristmasCarol.toString());
 	}
 
