@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import domain.Address;
 import domain.CompLastDatePlayed;
+import domain.Composition;
 import domain.Date;
+import domain.Movement;
 import domain.PhoneNumber;
 import domain.Soloist;
 import junit.framework.TestCase;
@@ -26,7 +28,13 @@ public class Test_Soloist extends TestCase{
 		assertTrue(s.getInstrumentGroup().equals(""));
 		assertTrue(s.getSoloistID().toString().equals("SOL1"));
 		/* testing fully parameterized constructor */
-		CompLastDatePlayed c = new CompLastDatePlayed("Jingle Bells",new Date(10,12,2010));
+		Movement m = new Movement("1st Movement");
+		ArrayList<Movement> aM = new ArrayList<Movement>();
+		aM.add(m);
+		ArrayList<Soloist> aS = new ArrayList<Soloist>();
+		
+		Composition comp = new Composition("Jingle Bells", aM,aS,"Mozart");
+		CompLastDatePlayed c = new CompLastDatePlayed(comp,new Date(10,12,2010));
 		ArrayList<CompLastDatePlayed> cldplist = new ArrayList<CompLastDatePlayed>();
 		cldplist.add(c);
 		Soloist s1 = new Soloist("Ella","Fitzgerald",new PhoneNumber("0123456789"),new Address.AddressBuilder(4, "Privet Dr.").build(),"@hotmail.com","Drums","Percussion", cldplist);
@@ -37,13 +45,19 @@ public class Test_Soloist extends TestCase{
 		assertTrue(s1.getEmailAddress().equals("@hotmail.com"));
 		assertTrue(s1.getInstrumentName().equals("Drums"));
 		assertTrue(s1.getInstrumentGroup().equals("Percussion"));
-		assertTrue(s1.getcompositionsDate().get(0).getComposition().equals("Jingle Bells"));
+		assertTrue(s1.getcompositionsDate().get(0).getComposition().getCompositionName().equals("Jingle Bells"));
 		
 	}
 	
 	/** Tests the accessors */
 	public void testAccessors(){
-		CompLastDatePlayed c = new CompLastDatePlayed("Jingle Bells",new Date(10,12,2010));
+		Movement m = new Movement("1st Movement");
+		ArrayList<Movement> aM = new ArrayList<Movement>();
+		aM.add(m);
+		ArrayList<Soloist> s = new ArrayList<Soloist>();
+		
+		Composition comp = new Composition("Jingle Bells", aM,s,"Mozart");
+		CompLastDatePlayed c = new CompLastDatePlayed(comp,new Date(10,12,2010));
 		ArrayList<CompLastDatePlayed> cldplist = new ArrayList<CompLastDatePlayed>();
 		cldplist.add(c);
 		Soloist s1 = new Soloist("Ella","Fitzgerald",new PhoneNumber("0123456789"),new Address.AddressBuilder(4, "Privet Dr.").build(),"@hotmail.com","Drums","Percussion", cldplist);
@@ -54,7 +68,7 @@ public class Test_Soloist extends TestCase{
 		assertTrue(s1.getEmailAddress().equals("@hotmail.com"));
 		assertTrue(s1.getInstrumentName().equals("Drums"));
 		assertTrue(s1.getInstrumentGroup().equals("Percussion"));
-		assertTrue(s1.getcompositionsDate().get(0).getComposition().equals("Jingle Bells"));
+		assertTrue(s1.getcompositionsDate().get(0).getComposition().getCompositionName().equals("Jingle Bells"));
 	}
 	
 	/** Tests the mutators */
@@ -64,11 +78,17 @@ public class Test_Soloist extends TestCase{
 		assertTrue(s.getInstrumentName().equals("Piano"));
 		s.setInstrumentGroup("Keyboard");
 		assertTrue(s.getInstrumentGroup().equals("Keyboard"));
-		CompLastDatePlayed c = new CompLastDatePlayed("Enter Sandman", new Date (12,4,2003));
+		Movement m = new Movement("1st Movement");
+		ArrayList<Movement> aM = new ArrayList<Movement>();
+		aM.add(m);
+		ArrayList<Soloist> aS = new ArrayList<Soloist>();
+		
+		Composition comp = new Composition("Enter Sandman", aM,aS,"Mozart");
+		CompLastDatePlayed c = new CompLastDatePlayed(comp, new Date (12,4,2003));
 		ArrayList<CompLastDatePlayed> cldplist = new ArrayList<CompLastDatePlayed>();
 		cldplist.add(c);
 		s.setCompositionDate(cldplist);
-		assertTrue(s.getcompositionsDate().get(0).getComposition().equals("Enter Sandman"));
+		assertTrue(s.getcompositionsDate().get(0).getComposition().getCompositionName().equals("Enter Sandman"));
 		
 	}
 }
