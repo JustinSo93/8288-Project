@@ -17,7 +17,7 @@ public class Test_CompLastDatePlayed extends TestCase {
 
 
 	/**
-	 * Test toString to make sure its printing out the right string
+	 * Test parameterized constructor
 	 */
 	public void testConstructors() {
 		System.out.println("\tExecuting Test_CompLastDatePlayed.testConstructors");
