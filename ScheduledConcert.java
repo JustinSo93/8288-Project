@@ -6,25 +6,50 @@ import javax.swing.JOptionPane;
 
 
 
-
+/**
+ * This class creates a ScheduledConcert and extends TemplateConcert
+ * 
+ * @author Tyler Woyiwada, Justin SO
+ *
+ */
 public class ScheduledConcert  extends TemplateConcert {
 
+/**
+ * attribute to be used within the class
+ * @param VenueDate venuedate
+ * @param ArrayList<Tickets> ticketList
+ * @param double revenue
+ */
 	protected VenueDate venuedate;
 	protected ArrayList<Tickets> ticketList;
 	protected double revenue;
-	
+
+/**
+ * empty constructor
+ */
 	public ScheduledConcert(){
 		super();
 		this.venuedate = new VenueDate();
 		this.ticketList = new ArrayList<Tickets>();
 	}
-	
+/**
+ * parameterized constructor
+ * 
+ * @param lC
+ * @param c
+ * @param lA
+ * @param vd
+ * @param tL
+ */
 	public ScheduledConcert(ArrayList<Composition> lC, Conductor c, ArrayList<Accompanist> lA, VenueDate vd, ArrayList<Tickets> tL){
 		super(lC,c, lA);
 		this.venuedate = vd;
 		this.ticketList = tL;
 	}
-	
+/**
+ * public set method that sets whether a ticket is sold or not
+ * @param Tickets ticket
+ */
 	public void sellTicket(Tickets ticket){
 		if (ticket.getIsSold()==false){
 			revenue += ticket.getPrice();
@@ -35,6 +60,12 @@ public class ScheduledConcert  extends TemplateConcert {
 			System.out.println("Ticket has already been sold");
 		}
 	}
+	
+/**
+ * public method that generates the ticket based on available seating
+ * @param Array letters
+ * 
+ */
 	public void generateTickets ()	{
 		char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'};
 		try{
@@ -58,10 +89,6 @@ public class ScheduledConcert  extends TemplateConcert {
 				}
 			}
 		
-			/**
-			 * The implementation of the ArrayList of Tickets here is a little clumsy. This arraylist contains all tickets for all rows.
-			 * 
-			 */
 			for (int i = 0; i<numberOfRows; i++){
 				String numSeatsPerRowString = JOptionPane.showInputDialog("Enter the number of seats in row " + rows.get(i)+": ");
 				Integer numSeatsPerRow = Integer.parseInt(numSeatsPerRowString);
@@ -82,15 +109,26 @@ public class ScheduledConcert  extends TemplateConcert {
 		}
 		
 	}
-	
+/**
+ * public set method that sets the value of the array of tickets
+ * 
+ * @param ArrayList<Tickets> t
+ */
 	public void setTicketList(ArrayList <Tickets> t){
 		this.ticketList = t;
 	}
-	
+
+/**
+ * public get method that returns the ArrayList of Tickets
+ * @return ArrayList<Tickets> ticketlist
+ */
 	public ArrayList<Tickets> getTicketList(){
 		return this.ticketList;
 	}
-	
+/**
+ * public method that removes Tickets from the 
+ * @param t
+ */
 	public void removeTickets (Tickets t){
 		for (int i = 0; i < ticketList.size();i++){
 			if (t.getSeat().equals(ticketList.get(i).getSeat())){
@@ -100,24 +138,30 @@ public class ScheduledConcert  extends TemplateConcert {
 		}
 		
 	}
-	
+/**
+ * public get method that returns a VenueDate
+ * @return VenueDate venuedate
+ */
 	public VenueDate getVenueDate(){
 		return this.venuedate;
 	}
-	
+/**
+ * public set method that sets the value of the VenueDate object vd
+ * @param vd
+ */
 	public void setVenueDate(VenueDate vd){
 		this.venuedate = vd;
 	}
 	
-	/**
-	 * @return the revenue
+	/**public get method that returns revenue
+	 * @return double revenue
 	 */
 	public double getRevenue() {
 		return revenue;
 	}
 
-	/**
-	 * @param revenue the revenue to set
+	/**publid set method that sets the value of the double revenue
+	 * @param double revenue
 	 */
 	public void setRevenue(double revenue) {
 		this.revenue = revenue;
