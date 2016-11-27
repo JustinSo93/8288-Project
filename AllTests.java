@@ -27,6 +27,22 @@ public class AllTests extends TestCase {
 		suite.addTest(Test_TicketModel.suite());
 		suite.addTest(Test_TransactionID.suite());
 		suite.addTest(Test_VenueID.suite());
+		suite.addTest(Test_Accompanist.suite());
+		suite.addTest(Test_CompLastDatePlayed.suite());
+		suite.addTest(Test_Composition.suite());
+		suite.addTest(Test_Conductor.suite());
+		suite.addTest(Test_Movement.suite());
+		suite.addTest(Test_PerformedConcert.suite());
+		suite.addTest(Test_Person.suite());
+		suite.addTest(Test_PostalCode.suite());
+		suite.addTest(Test_Purchase.suite());
+		suite.addTest(Test_Refund.suite());
+		suite.addTest(Test_ScheduledConcert.suite());
+		suite.addTest(Test_Soloist.suite());
+		suite.addTest(Test_SoloistID.suite());
+		suite.addTest(Test_StaffMember.suite());
+		suite.addTest(Test_TemplateConcert.suite());
+		suite.addTest(Test_VenueDate.suite());
 		
 		return suite;
 	}
