@@ -10,18 +10,9 @@ import java.util.ArrayList;
 
 public class Accompanist extends Person{
 
-/**
- * Additional attributes-
- * 
- * @param ID accompID- generated ID for the accompanist.  
- * @param String instrumentGroup- the instrument group of the instrument that the accompanist play.
- * @param String instrumentName- the instrument that the accompanist plays.
- */
-	ID accompID;
-	String instrumentGroup;
-	String instrumentName;
 
 
+/* CONSTRUCTORS -------------------------------------------------- */
 
 
 /** Empty constructor */	
@@ -50,12 +41,30 @@ public Accompanist(String firstName, String lastName, PhoneNumber phone,
 	this.instrumentGroup =instrumentGroup;
 	this.setAccompID();
 	}
+/* ACCESSORS ----------------------------------------------------- */
+	
 /** public get method for accompID
  * 
  */
     public ID getAccompID() {
 		return accompID;
 	}
+/** public get method for instrumentGroup
+ * 
+ * @return String instrumentGroup
+ */
+	public String getInstrumentGroup() {
+		return instrumentGroup;
+	}
+/**
+ * public get method for instrumentName.
+ * @return instrumentName
+ */
+	public String getInstrumentName() {
+		return instrumentName;
+	}
+
+/* MODIFIERS ----------------------------------------------------- */
 
 /** public set method for accompID
  * 
@@ -64,13 +73,7 @@ public Accompanist(String firstName, String lastName, PhoneNumber phone,
 		 accompID = IDFactory.getID("A");
 	}
 
-/** public get method for instrumentGroup
- * 
- * @return String instrumentGroup
- */
-	public String getInstrumentGroup() {
-		return instrumentGroup;
-	}
+
 /**
  * public set method for instrumentGroup.
  * @param instrumentGroup
@@ -80,13 +83,7 @@ public Accompanist(String firstName, String lastName, PhoneNumber phone,
 		this.instrumentGroup = instrumentGroup;
 	}
 
-/**
- * public get method for instrumentName.
- * @return instrumentName
- */
-	public String getInstrumentName() {
-		return instrumentName;
-	}
+
 /**
  * public set method for instrumentName
  * @param instrumentName
@@ -95,6 +92,7 @@ public Accompanist(String firstName, String lastName, PhoneNumber phone,
 	public void setInstrumentName(String instrumentName) {
 		this.instrumentName = instrumentName;
 	}
+/* HELPER METHODS	--------------------------------------------------	*/
 /**
  * public toString method returns a String value of Accompanist.
  * @return Accompanist.toString
@@ -106,6 +104,17 @@ public Accompanist(String firstName, String lastName, PhoneNumber phone,
 				+ ", \nphoneNumber: " + phoneNumber + ", instrument group: " + instrumentGroup
 				+ ", instrument name: " + instrumentName + "]\n*****************************************************\n ";
 	}
+	/* ATTRIBUTES ----------------------------------------------------- */
+	/**
+ * Additional attributes-
+ * 
+ * @param ID accompID- generated ID for the accompanist.  
+ * @param String instrumentGroup- the instrument group of the instrument that the accompanist play.
+ * @param String instrumentName- the instrument that the accompanist plays.
+ */
+	protected ID accompID;
+	protected String instrumentGroup;
+	protected String instrumentName;
 	
 	/**
 	 * end of class.
