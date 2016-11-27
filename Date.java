@@ -2,24 +2,33 @@ package domain;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 	The Date class contaisn attributes day, month and year stored as ints.
+ * @author Justin, So
+ * @version 1.0.0 11/25/2016
+ *
+ */
 public class Date {
 
-private int day;
-private int month;
-private int year;
+
 	
+/* CONSTRUCTORS -------------------------------------------------- */
 	
+	/** Empty constructor. Sets the date to January 1st, 1900 */
 	public Date (){
 		this.day = 1;
 		this.month =  1;
 		this.year = 1900;
 	}
 	
+	/** Fully parameterized constructor */
 	public Date(int d, int m, int y){
 		this.day = d;
 		this.month = m;
 		this.year = y;
 	}
+	
+	/* ACCESSORS ----------------------------------------------------- */
 		/**
 	 * @return the day
 	 */
@@ -27,10 +36,25 @@ private int year;
 		return day;
 	}
 	
-	
+	/**
+	 * @return the month
+	 */
+	public int getMonth() {
+		return month;
+	}
 	
 	/**
-	 * @param day the day to set
+	 * @return the year
+	 */
+	public int getYear() {
+		return year;
+	}
+	
+	/* MODIFIERS ----------------------------------------------------- */
+	
+	/**
+	 * Void method which sets the day. Doesn't allow days greater than 31 or less than 0
+	 * @param day
 	 */
 	public void setDay(int day) {
 		if (day <31 && day >0){
@@ -46,17 +70,8 @@ private int year;
 	}
 	
 	
-	
 	/**
-	 * @return the month
-	 */
-	public int getMonth() {
-		return month;
-	}
-	
-	
-	
-	/**
+	 * Void method which sets the month. Doesn't allow months greater than 12 or less than 0
 	 * @param month the month to set
 	 */
 	public void setMonth(int month) {
@@ -71,18 +86,8 @@ private int year;
 		}
 	}
 	
-	
-	
 	/**
-	 * @return the year
-	 */
-	public int getYear() {
-		return year;
-	}
-	
-	
-	
-	/**
+	 * Void method which sets the year. Doesn't allow years greater than 2100 or less than 1900
 	 * @param year the year to set
 	 */
 	public void setYear(int year) {
@@ -96,11 +101,21 @@ private int year;
 		}
 	}
 	
+	/* HELPER METHODS ----------------------------------------------------- */
+	/**
+	 * This method toString sets the display format for the attributes
+	 */
 	public String toString(){
 		return day+"/"+month+"/"+year;
 	}
 	
-
+	/* ATTRIBUTES ----------------------------------------------------- */
+	/** Private attribute day as an int */
+	private int day;
+	/** Private attribute month as an int */
+	private int month;
+	/** Private attribute year as an int */
+	private int year;
 
 
 
