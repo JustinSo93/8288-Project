@@ -1,4 +1,5 @@
 package domain;
+import java.util.Scanner;
 
 import java.util.Scanner;
 /**
@@ -9,18 +10,18 @@ import java.util.Scanner;
  *
  */
 public class PostalCode {
-	String postalCode;
-	static String msg;
-/**
- * Parameterized PostalCode constructor that used for take input for postal code.
- * and set postal code by SetPostalCode() method after verifying valid postal code using
- * checkPostalCode("string postalCode") method. 
- * @param a
- */
+	protected String postalCode;
+	protected static String msg;
+	/**
+	 * Parameterized PostalCode constructor that used for take input for postal code.
+	 * and set postal code by SetPostalCode() method after verifying valid postal code using
+	 * checkPostalCode("string postalCode") method. 
+	 * @param a
+	 */
 	public PostalCode(String a) {
 		String postalCodeConstructor = a;
 		if (checkPostalCode(postalCodeConstructor) == true) {
-			SetPostalCode(postalCodeConstructor);
+			setPostalCode(postalCodeConstructor);
 		}
 		if (checkPostalCode(postalCodeConstructor) == false) {
 			System.out.println(msg);
@@ -81,13 +82,13 @@ public class PostalCode {
 		}
 		return true;
 	}
-	
-	
+
+
 	/**Setter method of PostalCode class is used for set 
 	 * 
 	 * @param st
 	 */
-	public void SetPostalCode(String st) {
+	public void setPostalCode(String st) {
 		postalCode = st;
 	}
 
@@ -95,10 +96,10 @@ public class PostalCode {
 	 * Getter method of PostalCode class is used for Get valid postal code 
 	 * @return postalCode
 	 */
-	public String GetPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
-	
+
 	/**
 	 * toString method of PostalCode Class is used for return valid postal code as string. 
 	 */
