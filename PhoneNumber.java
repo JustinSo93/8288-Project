@@ -1,14 +1,33 @@
 package domain;
 
+/**
+ * This class creates a PhoneNumber object from a string that contains ten digits and reformats them. 
+ * @author tyyyl
+ *
+ */
 public class PhoneNumber{
 	
+/**
+ * constructor
+ * @param String s
+ */
 	
 public PhoneNumber(String s) {
 		// TODO Auto-generated constructor stub
 	createID(s);
 	}
+
+/**
+ * Attribute to be used within the class
+ * @param StringBuilder sb
+ */
 public StringBuilder sb;
 
+/**
+ * public method that forms the string into a formatted phone number
+ * @param s
+ * @return StringBuilder sb to toString method
+ */
 public String createID(String s){
 	
 	    s = s.replaceAll("[^0-9]", ""); 
@@ -34,6 +53,10 @@ public String createID(String s){
 		
 	}
 
+/**
+ * public toString method that returns a string version of a PhoneNumber Object
+ * @return String "" +sb
+ */
  @Override
     public String toString(){
 
