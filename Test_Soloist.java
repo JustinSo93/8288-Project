@@ -38,14 +38,14 @@ public class Test_Soloist extends TestCase{
 		ArrayList<CompLastDatePlayed> cldplist = new ArrayList<CompLastDatePlayed>();
 		cldplist.add(c);
 		Soloist s1 = new Soloist("Ella","Fitzgerald",new PhoneNumber("0123456789"),new Address.AddressBuilder(4, "Privet Dr.").build(),"@hotmail.com","Drums","Percussion", cldplist);
-		assertTrue(s1.getFirstName().equals("Ella"));
-		assertTrue(s1.getLastName().equals("Fitzgerald"));
-		assertTrue(s1.getphoneNumber().toString().equals("(012) 345-6789"));
-		assertTrue(s1.getAddress().getStreet().equals("Privet Dr."));
-		assertTrue(s1.getEmailAddress().equals("@hotmail.com"));
-		assertTrue(s1.getInstrumentName().equals("Drums"));
-		assertTrue(s1.getInstrumentGroup().equals("Percussion"));
-		assertTrue(s1.getcompositionsDate().get(0).getComposition().getCompositionName().equals("Jingle Bells"));
+		assertNotNull(s1.getFirstName().equals("Ella"));
+		assertNotNull(s1.getLastName().equals("Fitzgerald"));
+		assertNotNull(s1.getphoneNumber().toString().equals("(012) 345-6789"));
+		assertNotNull(s1.getAddress().getStreet().equals("Privet Dr."));
+		assertNotNull(s1.getEmailAddress().equals("@hotmail.com"));
+		assertNotNull(s1.getInstrumentName().equals("Drums"));
+		assertNotNull(s1.getInstrumentGroup().equals("Percussion"));
+		assertNotNull(s1.getcompositionsDate().get(0).getComposition().getCompositionName().equals("Jingle Bells"));
 		
 	}
 	
