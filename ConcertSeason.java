@@ -11,10 +11,6 @@ import java.util.Calendar;
 public class ConcertSeason {
 
 /**
- * empty constructor.
- */
-public ConcertSeason(){}
-/**
  * attributes within the class.
  * @param ArrayList<ScheduledConcert>concerts
  * @param Date startDate
@@ -23,6 +19,10 @@ public ConcertSeason(){}
 private ArrayList<ScheduledConcert> concerts = new ArrayList<ScheduledConcert>();
 private Date startDate;
 private Date endDate;
+/**
+ * empty constructor.
+ */
+public ConcertSeason(){}
 
 /**
  * public get method that returns the arraylist of concerts in the season
