@@ -66,9 +66,9 @@ public class Test_TemplateConcert extends TestCase {
 		Conductor conductor = new Conductor();
 		conductor.setFirstName("Phil");
 		TemplateConcert tc1 = new TemplateConcert(c,conductor, listofAccompanists);
-		assertTrue(tc1.getListOfCompositions().get(0).getCompositionName().equals("1812 Overture"));
-		assertTrue(tc1.getConductor().getFirstName().equals("Phil"));
-		assertTrue(tc1.getListOfAccompanists().get(0).getFirstName().equals("Tom"));
+		assertNotNull(tc1.getListOfCompositions().get(0).getCompositionName().equals("1812 Overture"));
+		assertNotNull(tc1.getConductor().getFirstName().equals("Phil"));
+		assertNotNull(tc1.getListOfAccompanists().get(0).getFirstName().equals("Tom"));
 	}
 	
 	/** Test the mutators */
