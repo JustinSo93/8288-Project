@@ -23,7 +23,9 @@ public class Conductor extends Person{
 		this.emailAddress = "";
 		this.instrumentName = "";
 		this.instrumentGroup = "";
+		this.setConductorID();
 	}
+	
 	
 	/** Constructor Conductor initializes variable.*/
 	public Conductor(String firstName, String lastName, PhoneNumber phoneNumber, Address address, 
@@ -56,7 +58,20 @@ public class Conductor extends Person{
 	 */
 	public String getInstrumentName() { return instrumentName; }
 	
+	/**
+	 * This method gets ScheduledConcerts
+	 * @return ScheduledConcerts
+	 */
+	public ArrayList<ScheduledConcert> getScheduledConcerts(){ return this.ScheduledConcerts; }
+	
+	
 	/* MODIFIERS ----------------------------------------------------- */
+	/**
+	 * Void method setScheduledConcerts an ArrayList<ScheduledConcert> variable ScheduledConcerts
+	 * @param aSC
+	 */
+	public void setScheduledConcerts( ArrayList<ScheduledConcert> aSC) { this.ScheduledConcerts  =aSC;}
+	
 	/** Void method setConductorID sets a conductorID */
 	public void setConductorID() { conductorID = IDFactory.getID("CON"); }
 
