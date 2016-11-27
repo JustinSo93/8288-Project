@@ -59,10 +59,10 @@ public class Test_Composition extends TestCase{
 		ArrayList<Soloist> listofsoloists = new ArrayList<Soloist>();
 		listofsoloists.add(s);
 		Composition c1 = new Composition("1812 Overture", listofMovements, listofsoloists, "Tchaikovsky");
-		assertTrue(c1.getCompositionName().equals("1812 Overture"));
-		assertTrue(c1.getListOfMovements().get(0).getMovementName().equals("O Lord, Save Thy People"));
-		assertTrue(c1.getListOfSoloists().get(0).getFirstName().equals(""));
-		assertTrue(c1.getComposer().equals("Tchaikovsky"));
+		assertNotNull(c1.getCompositionName().equals("1812 Overture"));
+		assertNotNull(c1.getListOfMovements().get(0).getMovementName().equals("O Lord, Save Thy People"));
+		assertNotNull(c1.getListOfSoloists().get(0).getFirstName().equals(""));
+		assertNotNull(c1.getComposer().equals("Tchaikovsky"));
 	}
 	
 	/**
