@@ -7,24 +7,27 @@ package domain;
 
 public class CompLastDatePlayed {
 	
-	/**
-	 * Atrributes to be used within the class.
-	 * @param Date lastDatePlayed
-	 * @param String composition
-	 */
-	Date lastDatePlayed;
-	String composition;
 
+	/* CONSTRUCTORS -------------------------------------------------- */
+	/**
+	 * Empty constructor
+	 */
+	public CompLastDatePlayed(){
+		this.composition = new Composition();
+		this.lastDatePlayed = new Date();
+	}
+	
 /**
- * constructor.
- * @param String x(composition)
+ *  Fully parameterized constructor.
+ * @param Composition x(composition)
  * @param lastPlayed(Date last played)
  */
-	public CompLastDatePlayed(String x, Date lastPlayed) {
+	public CompLastDatePlayed(Composition x, Date lastPlayed) {
 		this.composition = x;
 		this.lastDatePlayed = lastPlayed;
 	}
 	
+	/* ACCESSORS ----------------------------------------------------- */
 	/**
 	 * public get method to return the lastDatePlayed
 	 * @return Date lastDatePlayed
@@ -32,6 +35,15 @@ public class CompLastDatePlayed {
 	public Date getLastDatePlayed() {
 		return lastDatePlayed;
 	}
+
+	/**
+	 * public get method that returns the composition.
+	 * @return Composition composition
+	 */
+	public Composition getComposition() {
+		return composition;
+	}
+	/* MODIFIERS ----------------------------------------------------- */
 	/**
 	 * public set method to set the lastDatePlayed
 	 * @param Date lastDatePlayed
@@ -40,29 +52,26 @@ public class CompLastDatePlayed {
 		this.lastDatePlayed = lastDatePlayed;
 	}
 	/**
-	 * public get method that returns the composition.
-	 * @return String composition
-	 */
-	public String getComposition() {
-		return composition;
-	}
-	/**
 	 * public set method that sets the composition
-	 * @param String composition
+	 * @param Composition composition
 	 */
-	public void setComposition(String composition) {
+	public void setComposition(Composition composition) {
 		this.composition = composition;
 	}
-/**
- * public toString method that returns a String version of CompLastDatePlayed
- * @param String composition
- * @param Date lastDatePlayed
- */
-@Override
-public String toString(){
-	
-	return composition + " " +lastDatePlayed;
-}
-
-
+	/* HELPER METHODS ----------------------------------------------------- */
+	/**
+	 * public toString method that returns a String version of CompLastDatePlayed
+	 * @param Composition composition
+	 * @param Date lastDatePlayed
+	 */
+	@Override
+	public String toString(){
+		
+		return composition.getCompositionName() + " " +lastDatePlayed.toString();
+	}
+/* ATTRIBUTES ----------------------------------------------------- */
+/** The attribute shows lastDatePlayed as a Date */
+Date lastDatePlayed;
+/** The attribute shows composition as a Composition */
+Composition composition;
 }
