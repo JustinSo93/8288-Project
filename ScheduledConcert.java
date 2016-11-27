@@ -45,6 +45,10 @@ public class ScheduledConcert  extends TemplateConcert {
 		super(lC,c, lA);
 		this.venuedate = vd;
 		this.ticketList = tL;
+		for (int i = 0; i<tL.size();i++){
+			tL.get(i).setScheduledConcert(this);
+		}
+		c.ScheduledConcerts.add(this);
 	}
 /**
  * public set method that sets whether a ticket is sold or not
