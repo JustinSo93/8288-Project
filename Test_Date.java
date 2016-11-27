@@ -1,6 +1,6 @@
 package symphonytest;
 
-import domain.Address;
+
 import domain.Date;
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -17,15 +17,15 @@ public class Test_Date extends TestCase{
 		date = new Date();
 	
 	}
-	protected void tearDown() throws Exception { System.out.println("Test_Address End");	}
+	protected void tearDown() throws Exception { System.out.println("Test_Date End");	}
 	
 	public void testConstructors() {
 	      System.out.println("\tExecuting Test_Date.testConstructors");
 	      System.out.println("Testing empty constructor");
 	      Date date = new Date();
-	      assertEquals(date.getDay(),0);
-	      assertEquals(date.getMonth(),0);
-	      assertEquals(date.getYear(),0);
+	      assertEquals(date.getDay(),1);
+	      assertEquals(date.getMonth(),1);
+	      assertEquals(date.getYear(),1900);
 	      System.out.println("Testing parameterized constructor");
 	      Date day9 = new Date(1,12,2013);
 	      assertEquals(day9.getDay(),1);
@@ -50,6 +50,13 @@ public class Test_Date extends TestCase{
 		assertEquals(date.getMonth(),1);
 		assertEquals(date.getYear(),2002);
 		
+	}
+	
+	public void testBehaviours(){
+		date.setDay(20);
+		date.setMonth(1);
+		date.setYear(2003);
+		assertTrue(date.toString().equals("20/1/2003"));
 	}
 	
 }
