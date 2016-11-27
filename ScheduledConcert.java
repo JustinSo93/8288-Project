@@ -50,20 +50,7 @@ public class ScheduledConcert  extends TemplateConcert {
 		}
 		c.ScheduledConcerts.add(this);
 	}
-/**
- * public set method that sets whether a ticket is sold or not
- * @param Tickets ticket
- */
-	public void sellTicket(Tickets ticket){
-		if (ticket.getIsSold()==false){
-			revenue += ticket.getPrice();
-			boolean a = true;
-			ticket.setIsSold(a);
-		}
-		else{
-			System.out.println("Ticket has already been sold");
-		}
-	}
+
 	
 /**
  * public method that generates the ticket based on available seating
@@ -164,12 +151,14 @@ public class ScheduledConcert  extends TemplateConcert {
 		return revenue;
 	}
 
-	/**publid set method that sets the value of the double revenue
+	/**public set method that sets the value of the double revenue
 	 * @param double revenue
 	 */
 	public void setRevenue(double revenue) {
 		this.revenue = revenue;
 	}
+	
+
 	
 	
 	
