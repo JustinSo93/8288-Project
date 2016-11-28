@@ -6,7 +6,7 @@ package domain;
  */
 
 public class CompLastDatePlayed {
-	
+
 
 	/* CONSTRUCTORS -------------------------------------------------- */
 	/**
@@ -16,17 +16,17 @@ public class CompLastDatePlayed {
 		this.composition = new Composition();
 		this.lastDatePlayed = new Date();
 	}
-	
-/**
- *  Fully parameterized constructor.
- * @param Composition x(composition)
- * @param lastPlayed(Date last played)
- */
+
+	/**
+	 *  Fully parameterized constructor.
+	 * @param Composition x(composition)
+	 * @param lastPlayed(Date last played)
+	 */
 	public CompLastDatePlayed(Composition x, Date lastPlayed) {
 		this.composition = x;
 		this.lastDatePlayed = lastPlayed;
 	}
-	
+
 	/* ACCESSORS ----------------------------------------------------- */
 	/**
 	 * public get method to return the lastDatePlayed
@@ -66,12 +66,12 @@ public class CompLastDatePlayed {
 	 */
 	@Override
 	public String toString(){
-		
+
 		return composition.getCompositionName() + " " +lastDatePlayed.toString();
 	}
-/* ATTRIBUTES ----------------------------------------------------- */
-/** The attribute shows lastDatePlayed as a Date */
-protected Date lastDatePlayed;
-/** The attribute shows composition as a Composition */
-protected Composition composition;
+	/* ATTRIBUTES ----------------------------------------------------- */
+	/** The attribute shows lastDatePlayed as a Date */
+	protected Date lastDatePlayed;
+	/** The attribute shows composition as a Composition */
+	protected Composition composition;
 }
