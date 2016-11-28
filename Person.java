@@ -10,7 +10,7 @@ package domain;
 		
 		
 		private Person (PersonBuilder builder){
-			this.id = builder.id;
+			
 			this.firstName = builder.firstName;
 			this.lastName = builder.lastName;
 			this.phoneNumber = builder.phoneNumber;
