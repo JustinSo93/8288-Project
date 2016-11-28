@@ -13,7 +13,7 @@ public class CustomerID implements ID {
 	 * constructor that increments the ID code
 	 */
 	public CustomerID(){
-		this.id = musCount++;
+		this.id = custCount++;
 
 	}
 
@@ -24,7 +24,7 @@ public class CustomerID implements ID {
 	 */
 	@Override
 	public String createID() {
-		return musCode.toString();
+		return custCode.toString();
 	}
 	/**
 	 * public toString method that returns a String version of the CustomerID object
@@ -35,7 +35,7 @@ public class CustomerID implements ID {
 	@Override 
 	public String toString(){
 	
-		return musCode + id;
+		return custCode + id;
 	}
 
 	/* ATTRIBUTES	--------------------------------------------------	*/	
@@ -45,7 +45,7 @@ public class CustomerID implements ID {
 	 * @param int musCount
 	 * @param int id
 	 */
-	private static int musCount;
-	public String musCode = "CUS";
+	private static int custCount;
+	public String custCode = "CUS";
 	private int id;
 }
