@@ -6,42 +6,45 @@ package domain;
  *
  */
 public class AccompID implements ID{
-/**Variables that form the ID Key.
- * @param public int musCount
- * @param public String musCode
- * 
- */
-	private int id;
-	String musCode = "ACC";
-    private static int musCount;
-/**
- * constructor that increments the ID code
- */
-public AccompID(){
-this.id = musCount++;
-
-}
+	/* CONSTRUCTORS	--------------------------------------------------	*/
+	/**
+	 * constructor that increments the ID code
+	 */
+	public AccompID(){
+	this.id = accCount++;
 	
-/**
- * get method for the musCode
- * @return musCode.toString
- * 
- */
+	}
+	/*	NORMAL BEHAVIOR -------------------------------------------------	*/
+	/**
+	 * get method for the musCode
+	 * @return musCode.toString
+	 * 
+	 */
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
-				}
-/**
- * toString method for the ID code.
- * @return musCount + musCode toString.
- */
+			return accCode.toString();
+	}
+	
+	/* HELPER METHODS	--------------------------------------------------	*/
+	/**
+	 * toString method for the ID code.
+	 * @return musCount + musCode toString.
+	 */
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return accCode + id;
 	}
 
+	/* ATTRIBUTES	-----------------------------------------------------	*/
+	/**Variables that form the ID Key.
+	 * @param public int musCount
+	 * @param public String musCode
+	 * 
+	 */
+		private int id;
+		String accCode = "ACC";
+	    private static int accCount;
 	
 }
-
