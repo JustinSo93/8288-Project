@@ -5,15 +5,9 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 public class Venues {
-	protected Address address;
-	protected int seatingCapacity;
-	
-	protected int numberOfRows;
 	
 	
-	protected PhoneNumber phoneNumber;
-	
-	
+	/* CONSTRUCTORS	--------------------------------------------------	*/
 	public Venues(){
 		this.address = new Address();
 		this.seatingCapacity = 0;
@@ -31,8 +25,40 @@ public class Venues {
 	}
 	
 
+	/* ACCESSORS	-----------------------------------------------------	*/
 	
+	/**
+	 * 
+	 * @returns the address
+	 */
+	public Address getAddress() {
+			
+			return this.address;
+		}
 	
+	/**
+	 * @return the seatingCapacity
+	 */
+	public int getSeatingCapacity() {
+		return seatingCapacity;
+	}
+	
+	/**
+	 * @return the numberOfRows
+	 */
+	public int getNumberOfRows() {
+		return numberOfRows;
+	}
+	
+	/**
+	 * @return the phoneNumber
+	 */
+	public PhoneNumber getPhoneNumber() {
+		return phoneNumber;
+	}
+
+/* MODIFIERS	-----------------------------------------------------	*/
+
 	/**
 	 * @param seating_capacity the seating_capacity to set
 	 */
@@ -48,42 +74,16 @@ public class Venues {
 		}
 	}
 	
-		
 	
-	
-	
-	public Address getAddress() {
-		
-		return this.address;
-	}
-
-
-	
+	/**
+	 * Void method which sets the address
+	 * @param address
+	 */
 	public void setAddress(Address address) {
 		this.address = address;
 		
 	}
-	
-	
 
-	/**
-	 * @return the seatingCapacity
-	 */
-	public int getSeatingCapacity() {
-		return seatingCapacity;
-	}
-
-	/**
-	 * @param seatingCapacity the seatingCapacity to set
-	 */
-	
-
-	/**
-	 * @return the numberOfRows
-	 */
-	public int getNumberOfRows() {
-		return numberOfRows;
-	}
 
 	/**
 	 * @param numberOfRows the numberOfRows to set
@@ -95,12 +95,7 @@ public class Venues {
 
 
 
-	/**
-	 * @return the phoneNumber
-	 */
-	public PhoneNumber getPhoneNumber() {
-		return phoneNumber;
-	}
+
 
 	/**
 	 * @param phoneNumber the phoneNumber to set
@@ -109,13 +104,16 @@ public class Venues {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public static void main(String[] args){
-		Venues v = new Venues();
-		System.out.println(v.address.toString());
-		System.out.println(v.getPhoneNumber().toString());
-		
-	}
-
+	/* ATTRIBUTES	-----------------------------------------------------	*/
+	/** address is of type Address */
+	protected Address address;
+	/**seatingCapacity is an integer used to denote the maximum numver of tickets for ScheduledConcert using this venue */
+	protected int seatingCapacity;
+	/** numberOfRows is an integer used to denote the number of rows in the venue */
+	protected int numberOfRows;
+	/** phoneNumber is of type PhoneNumber */
+	
+	protected PhoneNumber phoneNumber;
 
 	
 
@@ -127,4 +125,5 @@ public class Venues {
 	
 
 }
+
 
