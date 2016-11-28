@@ -12,13 +12,13 @@ public class SoloistID implements ID{
  * 
  */
 	private int id;
-	String musCode = "SOL";
-    private static int musCount;
+	String soloCode = "SOL";
+    private static int soloCount;
 /**
  * constructor that increments the ID code
  */
 public SoloistID(){
-this.id = musCount++;
+this.id = soloCount++;
 
 }
 	
@@ -30,7 +30,7 @@ this.id = musCount++;
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
+				return soloCode.toString();
 				}
 /**
  * toString method for the ID code.
@@ -39,7 +39,7 @@ this.id = musCount++;
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return soloCode + id;
 	}
 
 	
