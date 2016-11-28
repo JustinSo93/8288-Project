@@ -12,7 +12,7 @@ public class ConductorID implements ID{
  * 
  */
 	private int id;
-	String musCode = "CON";
+	private String musCode = "CON";
     private static int musCount;
 /**
  * constructor that increments the ID code
