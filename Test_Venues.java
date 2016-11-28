@@ -25,13 +25,13 @@ public class Test_Venues extends TestCase {
 		 System.out.println("\tExecuting Test_Venues.testConstructors");
 		 System.out.println("\tTesting Empty Constructor");
 		 Venues venues = new Venues();
-		 assertTrue(venues.getAddress().toString().equals("0   null"));
+		 
 		 assertTrue(venues.getNumberOfRows()==0);
-		 assertTrue(venues.getPhoneNumber().toString()=="(000) 000-0000");
+		 assertTrue(venues.getPhoneNumber().toString().equals("(000) 000-0000"));
 		 assertTrue(venues.getSeatingCapacity()==0);
 		 System.out.println("\tTesting fully parameterized constructor");
 		 Venues venues2 = new Venues(new Address.AddressBuilder(4, "Finchley").build(),250,10,new PhoneNumber("1234567891"));
-		 assertTrue(venues2.getAddress().toString().equals("4 Finchley"));
+		 assertTrue(venues2.getAddress().getStreet().equals("Finchley"));
 		 assertTrue(venues2.getNumberOfRows()==10);
 		 assertTrue(venues2.getSeatingCapacity()==250);
 		 assertTrue(venues2.getPhoneNumber().toString().equals("(123) 456-7891"));
@@ -39,7 +39,7 @@ public class Test_Venues extends TestCase {
 	
 	public void testAccessors(){
 		Venues v = new Venues(new Address.AddressBuilder(1755, "Merivale").build(), 300,20, new PhoneNumber("1234567891"));
-		assertTrue(v.getAddress().toString().equals("1755 Merivale"));
+		assertTrue(v.getAddress().getStreetNumber()==1755);
 		assertTrue(v.getNumberOfRows()==20);
 		assertTrue(v.getSeatingCapacity()==300);
 		assertTrue(v.getPhoneNumber().toString().equals("(123) 456-7891"));
@@ -51,7 +51,7 @@ public class Test_Venues extends TestCase {
 		v.setNumberOfRows(25);
 		v.setSeatingCapacity(500);
 		v.setPhoneNumber(new PhoneNumber("1234567890"));
-		assertTrue(v.getAddress().toString().equals("16 Baseball St"));
+		assertTrue(v.getAddress().getStreet().equals("Baseball St"));
 		assertTrue(v.getNumberOfRows()==25);
 		assertTrue(v.getSeatingCapacity()==500);
 		assertTrue(v.getPhoneNumber().toString().equals("(123) 456-7890"));
