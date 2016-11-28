@@ -7,8 +7,8 @@ package domain;
  */
 public class StaffID implements ID{
 /**Variables that form the ID Key.
- * @param public int musCount
- * @param public String musCode
+ * @param public int soloCount
+ * @param public String soloCode
  * 
  */
 	private int id;
@@ -23,8 +23,8 @@ this.id = staffCount++;
 }
 	
 /**
- * get method for the musCode
- * @return musCode.toString
+ * get method for the soloCode
+ * @return soloCode.toString
  * 
  */
 	@Override
@@ -34,7 +34,7 @@ this.id = staffCount++;
 				}
 /**
  * toString method for the ID code.
- * @return musCount + musCode toString.
+ * @return soloCount + soloCode toString.
  */
 	@Override 
 	public String toString(){
