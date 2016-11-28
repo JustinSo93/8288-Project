@@ -6,6 +6,7 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+/** Test class which tests the Date class */
 public class Test_Date extends TestCase{
 	protected Date date;
 	
@@ -19,6 +20,7 @@ public class Test_Date extends TestCase{
 	}
 	protected void tearDown() throws Exception { System.out.println("Test_Date End");	}
 	
+	/** tests the constructors */
 	public void testConstructors() {
 	      System.out.println("\tExecuting Test_Date.testConstructors");
 	      System.out.println("Testing empty constructor");
@@ -33,6 +35,7 @@ public class Test_Date extends TestCase{
 	      assertEquals(day9.getYear(),2013);
 			
 	}
+	/** tests the accessors */
 	public void testAccessors(){
 		date.setDay(1);
 		date.setMonth(2);
@@ -42,6 +45,7 @@ public class Test_Date extends TestCase{
 		assertEquals(2003, date.getYear());
 	}
 	
+	/** Tests the mutators */
 	public void testMutators(){
 		date.setDay(20);
 		date.setMonth(1);
@@ -51,7 +55,7 @@ public class Test_Date extends TestCase{
 		assertEquals(date.getYear(),2002);
 		
 	}
-	
+	/**Tests the behaviours */
 	public void testBehaviours(){
 		date.setDay(20);
 		date.setMonth(1);
