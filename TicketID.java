@@ -12,13 +12,13 @@ public class TicketID implements ID{
  * 
  */
 	private int id;
-	String musCode = "TIC";
-    private static int musCount;
+	String tickCode = "TIC";
+    private static int tickCount;
 /**
  * constructor that increments the ID code
  */
 public TicketID(){
-this.id = musCount++;
+this.id = tickCount++;
 
 }
 	
@@ -30,7 +30,7 @@ this.id = musCount++;
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
+				return tickCode.toString();
 				}
 /**
  * toString method for the ID code.
@@ -39,7 +39,7 @@ this.id = musCount++;
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return tickCode + id;
 	}
 
 	
