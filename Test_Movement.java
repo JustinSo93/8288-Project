@@ -1,4 +1,4 @@
-package test;
+package symphonytest;
 
 import domain.Movement;
 import junit.framework.TestCase;
