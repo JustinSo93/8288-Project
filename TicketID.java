@@ -12,8 +12,8 @@ public class TicketID implements ID{
  * 
  */
 	private int id;
-	String tickCode = "TIC";
-    private static int tickCount;
+	private String tickCode = "TIC";
+   	 private static int tickCount;
 /**
  * constructor that increments the ID code
  */
