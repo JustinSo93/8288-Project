@@ -1,23 +1,22 @@
 package domain;
-
+/**
+* Address is a class used to store the addresses of persons and venues. It uses the Builder pattern
+*/
 public class Address {
 	
-	private int streetNumber;
-	private String street;
-	private String city;
-	private PostalCode postalCode;
-	private String provinceState;
-	private String country;
 	
-		private Address (AddressBuilder builder){
-			this.streetNumber = builder.streetNumber;
-			this.street = builder.street;
-			this.city = builder.city;
-			this.postalCode = builder.postalCode;
-			this.provinceState = builder.provinceState;
-			this.country = builder.country;
-		}
-		
+	/* CONSTRUCTORS -------------------------------------------------- */
+	
+	/** Constructor using the AddressBuilder inner class */
+	private Address (AddressBuilder builder){
+		this.streetNumber = builder.streetNumber;
+		this.street = builder.street;
+		this.city = builder.city;
+		this.postalCode = builder.postalCode;
+		this.provinceState = builder.provinceState;
+		this.country = builder.country;
+	}
+	/** Empty constructor. Assigns Strings to empty Strings and the street number to 0 */
 	public Address(){
 		this.streetNumber = 0;
 		this.street = "";
@@ -27,16 +26,7 @@ public class Address {
 		this.country = "";
 	}
 	
-	@Override
-	public String toString() {
-		if (this.street.equals(null)){
-			return "You need to provide a street name";
-		}
-		else{
-		return   streetNumber + " "  + street + " " +city+" " 
-				+ postalCode.toString()  +" " + provinceState + " "+ country ;
-		}
-	}
+	/* ACCESSORS ----------------------------------------------------- */
 	/**
 	 * @return the streetNumber
 	 */
@@ -44,22 +34,10 @@ public class Address {
 		return streetNumber;
 	}
 	/**
-	 * @param streetNumber the streetNumber to set
-	 */
-	public void setStreetNumber(int streetNumber) {
-		this.streetNumber = streetNumber;
-	}
-	/**
 	 * @return the street
 	 */
 	public String getStreet() {
 		return street;
-	}
-	/**
-	 * @param street the street to set
-	 */
-	public void setStreet(String street) {
-		this.street = street;
 	}
 	/**
 	 * @return the postalCode
@@ -73,6 +51,36 @@ public class Address {
 	public String getCity() {
 		return city;
 	}
+		/**
+	 * @return the provinceState
+	 */
+	public String getProvinceState() {
+		return provinceState;
+	}
+	/**
+	 * @return the country
+	 */
+	public String getCountry() {
+		return country;
+	}
+	
+	/* MODIFIERS ----------------------------------------------------- */
+	
+	/**
+	 * @param streetNumber the streetNumber to set
+	 */
+	public void setStreetNumber(int streetNumber) {
+		this.streetNumber = streetNumber;
+	}
+	
+	/**
+	 * @param street the street to set
+	 */
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	
 	/**
 	 * @param city the city to set
 	 */
@@ -85,31 +93,34 @@ public class Address {
 	public void setPostalCode(PostalCode postalCode) {
 		this.postalCode = postalCode;
 	}
-	/**
-	 * @return the provinceState
-	 */
-	public String getProvinceState() {
-		return provinceState;
-	}
+
 	/**
 	 * @param provinceState the provinceState to set
 	 */
 	public void setProvinceState(String provinceState) {
 		this.provinceState = provinceState;
 	}
-	/**
-	 * @return the country
-	 */
-	public String getCountry() {
-		return country;
-	}
+	
 	/**
 	 * @param country the country to set
 	 */
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	/* HELPER METHODS	--------------------------------------------------	*/
+	/** toString is a method returning a String displaying the address' attributes in String format */
+	@Override
+	public String toString() {
+		if (this.street.equals(null)){
+			return "You need to provide a street name";
+		}
+		else{
+		return   streetNumber + " "  + street + " " +city+" " 
+				+ postalCode.toString()  +" " + provinceState + " "+ country ;
+		}
+	}
 	
+	/** AddressBuilder is an inner class used to facilitate the Builder method */
 	public static class AddressBuilder{
 		private int streetNumber;
 		private String street;
@@ -145,10 +156,20 @@ public class Address {
 			return new Address(this);
 		}
 		
-		public static void main (String[] args){
-			//Example
-			Address testing = new Address.AddressBuilder(40, "Somerset").city("Ottawa").build();
-		}
-	}
 	
+		
+	}
+		/* ATTRIBUTES ----------------------------------------------------- */
+		/** streetNumber is an int used to denote the specific property located on particular street */
+		private int streetNumber;
+		/** street is a String used to indicate the street name */
+		private String street;
+		/** city is a String to indicate the city */
+		private String city;
+		/** postalCode is of type postalCode */
+		private PostalCode postalCode;
+		/** provinceState is a String to denote the province or state of the address */
+		private String provinceState;
+		/** country is a String to denote the country of the address */
+		private String country;
 }
