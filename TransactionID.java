@@ -12,7 +12,7 @@ public class TransactionID implements ID{
  * 
  */
 	private int id;
-	String transCode = "TRA";
+	String transCode = "TRN";
     private static int transCount;
 /**
  * constructor that increments the ID code
