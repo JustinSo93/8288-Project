@@ -12,13 +12,13 @@ public class VenueID implements ID{
  * 
  */
 	private int id;
-	String musCode = "VEN";
-    private static int musCount;
+	String venCode = "VEN";
+    private static int venCount;
 /**
  * constructor that increments the ID code
  */
 public VenueID(){
-this.id = musCount++;
+this.id = venCount++;
 
 }
 	
@@ -30,7 +30,7 @@ this.id = musCount++;
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
+				return venCode.toString();
 				}
 /**
  * toString method for the ID code.
@@ -39,7 +39,7 @@ this.id = musCount++;
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return venCode + id;
 	}
 
 	
