@@ -12,13 +12,13 @@ public class StaffID implements ID{
  * 
  */
 	private int id;
-	String musCode = "STA";
-    private static int musCount;
+	String staffCode = "STA";
+    private static int staffCount;
 /**
  * constructor that increments the ID code
  */
 public StaffID(){
-this.id = musCount++;
+this.id = staffCount++;
 
 }
 	
@@ -30,7 +30,7 @@ this.id = musCount++;
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
+				return staffCode.toString();
 				}
 /**
  * toString method for the ID code.
@@ -39,7 +39,7 @@ this.id = musCount++;
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return staffCode + id;
 	}
 
 	
