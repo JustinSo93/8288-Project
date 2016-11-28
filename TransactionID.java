@@ -12,13 +12,13 @@ public class TransactionID implements ID{
  * 
  */
 	private int id;
-	String musCode = "TRA";
-    private static int musCount;
+	String transCode = "TRA";
+    private static int transCount;
 /**
  * constructor that increments the ID code
  */
 public TransactionID(){
-this.id = musCount++;
+this.id = transCount++;
 
 }
 	
@@ -30,7 +30,7 @@ this.id = musCount++;
 	@Override
 	public String createID() {
 		    
-				return musCode.toString();
+				return transCode.toString();
 				}
 /**
  * toString method for the ID code.
@@ -39,7 +39,7 @@ this.id = musCount++;
 	@Override 
 	public String toString(){
 		
-		return musCode + id;
+		return transCode + id;
 	}
 
 	
