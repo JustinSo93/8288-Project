@@ -8,17 +8,9 @@ import java.util.ArrayList;
  */
 public class Customer extends Person{
 	
+	/* CONSTRUCTORS -------------------------------------------------- */
 	/**
-	 * attritubes to be used in the class
-	 * @param String username
-	 * @param String password
-	 * @param ID customerID
-	 */
-	protected String username;
-	protected String password;
-	protected ID customerID;
-	/**
-	 * constructor
+	 * Empty constructor
 	 */
 	public Customer (){
 		super();
@@ -36,6 +28,9 @@ public class Customer extends Person{
 		super(fName, lName, pn, address, emailAddress );
 		this.setID();
 	}
+	
+	/* MODIFIERS ----------------------------------------------------- */
+	
 	/**
 	 * public set method that calls the IDFactory and creates an ID for the customer
 	 * @param ID customerID
@@ -50,6 +45,9 @@ public class Customer extends Person{
 	 * @param ArrayList<Tickets> t
 	 * @return Purchase p 
 	 */
+	
+	/*	NORMAL BEHAVIOR -------------------------------------------------	*/
+	
 	public Purchase createPurchase (String currency, ArrayList<Tickets> t){
 		double amount = 0;
 	
@@ -89,5 +87,16 @@ public class Customer extends Person{
 		r.setDestination(this);
 		return r;
 	}
+	/* ATTRIBUTES ----------------------------------------------------- */
+	/**
+	 * attributes to be used in the class
+	 * @param String username
+	 * @param String password
+	 * @param ID customerID
+	 */
+	protected String username;
+	protected String password;
+	protected ID customerID;
+	
 
 }
