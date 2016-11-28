@@ -14,33 +14,25 @@ import javax.swing.JOptionPane;
  */
 public class ScheduledConcert  extends TemplateConcert {
 
-/**
- * attribute to be used within the class
- * @param VenueDate venuedate
- * @param ArrayList<Tickets> ticketList
- * @param double revenue
- */
-	protected VenueDate venuedate;
-	protected ArrayList<Tickets> ticketList;
-	protected double revenue;
+	/* CONSTRUCTORS ----------------------------------------------------- */
 
-/**
- * empty constructor
- */
+	/**
+	 * empty constructor
+	 */
 	public ScheduledConcert(){
 		super();
 		this.venuedate = new VenueDate();
 		this.ticketList = new ArrayList<Tickets>();
 	}
-/**
- * parameterized constructor
- * 
- * @param lC
- * @param c
- * @param lA
- * @param vd
- * @param tL
- */
+	/**
+	 * parameterized constructor
+	 * 
+	 * @param lC
+	 * @param c
+	 * @param lA
+	 * @param vd
+	 * @param tL
+	 */
 	public ScheduledConcert(ArrayList<Composition> lC, Conductor c, ArrayList<Accompanist> lA, VenueDate vd, ArrayList<Tickets> tL){
 		super(lC,c, lA);
 		this.venuedate = vd;
@@ -51,12 +43,14 @@ public class ScheduledConcert  extends TemplateConcert {
 		c.ScheduledConcerts.add(this);
 	}
 
-	
-/**
- * public method that generates the ticket based on available seating
- * @param Array letters
- * 
- */
+
+
+	/* BEHAVIOURS ----------------------------------------------------- */	
+	/**
+	 * public method that generates the ticket based on available seating
+	 * @param Array letters
+	 * 
+	 */
 	public void generateTickets ()	{
 		char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'};
 		try{
@@ -76,50 +70,35 @@ public class ScheduledConcert  extends TemplateConcert {
 						rows.add(Character.toString(alphabet));
 						System.out.println("Added row: " + Character.toString(alphabet));
 					}
-					
+
 				}
 			}
-		
+
 			for (int i = 0; i<numberOfRows; i++){
 				String numSeatsPerRowString = JOptionPane.showInputDialog("Enter the number of seats in row " + rows.get(i)+": ");
 				Integer numSeatsPerRow = Integer.parseInt(numSeatsPerRowString);
-				
-				
+
+
 				for (int j = 0; j<numSeatsPerRow;j++){
 					ticketList.add(new Tickets(rows.get(i)+j));
-					
+
 				}
-				
+
 			}
-			
+
 			for (int i = 0; i< ticketList.size();i++){
 				System.out.println(ticketList.get(i).getSeat()+ " price: " + ticketList.get(i).getPrice());
 			}
 		}catch( java.lang.NumberFormatException e){
 			System.out.println("You didn't put a number");
 		}
-		
-	}
-/**
- * public set method that sets the value of the array of tickets
- * 
- * @param ArrayList<Tickets> t
- */
-	public void setTicketList(ArrayList <Tickets> t){
-		this.ticketList = t;
-	}
 
-/**
- * public get method that returns the ArrayList of Tickets
- * @return ArrayList<Tickets> ticketlist
- */
-	public ArrayList<Tickets> getTicketList(){
-		return this.ticketList;
 	}
-/**
- * public method that removes Tickets from the 
- * @param t
- */
+	
+	/**
+	 * public method that removes Tickets from the 
+	 * @param t
+	 */
 	public void removeTickets (Tickets t){
 		for (int i = 0; i < ticketList.size();i++){
 			if (t.getSeat().equals(ticketList.get(i).getSeat())){
@@ -127,22 +106,18 @@ public class ScheduledConcert  extends TemplateConcert {
 				break;
 			}
 		}
-		
+
 	}
-/**
- * public get method that returns a VenueDate
- * @return VenueDate venuedate
- */
-	public VenueDate getVenueDate(){
-		return this.venuedate;
+
+
+	/**
+	 * public get method that returns the ArrayList of Tickets
+	 * @return ArrayList<Tickets> ticketlist
+	 */
+	public ArrayList<Tickets> getTicketList(){
+		return this.ticketList;
 	}
-/**
- * public set method that sets the value of the VenueDate object vd
- * @param vd
- */
-	public void setVenueDate(VenueDate vd){
-		this.venuedate = vd;
-	}
+	/* ACCESSORS ----------------------------------------------------- */
 	
 	/**public get method that returns revenue
 	 * @return double revenue
@@ -151,21 +126,56 @@ public class ScheduledConcert  extends TemplateConcert {
 		return revenue;
 	}
 
+	/**
+	 * public get method that returns a VenueDate
+	 * @return VenueDate venuedate
+	 */
+	public VenueDate getVenueDate(){
+		return this.venuedate;
+	}
+	/**
+	 * public set method that sets the value of the VenueDate object vd
+	 * @param vd
+	 */
+	/* MUTATORS ----------------------------------------------------- */
+
+	/**
+	 * public set method that sets the value of the array of tickets
+	 * 
+	 * @param ArrayList<Tickets> t
+	 */
+	public void setTicketList(ArrayList <Tickets> t){
+		this.ticketList = t;
+	}
+
+	public void setVenueDate(VenueDate vd){
+		this.venuedate = vd;
+	}
+
 	/**public set method that sets the value of the double revenue
 	 * @param double revenue
 	 */
 	public void setRevenue(double revenue) {
 		this.revenue = revenue;
 	}
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/* ATTRIBUTES ----------------------------------------------------- */
+
+	/**
+	 * attribute to be used within the class
+	 * @param VenueDate venuedate
+	 * @param ArrayList<Tickets> ticketList
+	 * @param double revenue
+	 */
+	protected VenueDate venuedate;
+	protected ArrayList<Tickets> ticketList;
+	protected double revenue;
+
+
+
+
+
+
+
+
 }
