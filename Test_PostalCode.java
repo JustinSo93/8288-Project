@@ -49,10 +49,10 @@ public class Test_PostalCode extends TestCase {
 		PostalCode p1 = new PostalCode("k1g3n9");
 		assertNotNull("\t\tTest_Address.testAccessors: Address is null", p1);
 
-		p1.SetPostalCode("k1g3n9");
+		p1.setPostalCode("k1g3n9");
 		;
 
-		assertEquals("k1g3n9", p1.GetPostalCode());
+		assertEquals("k1g3n9", p1.getPostalCode());
 	}
 
 	/**
@@ -63,9 +63,9 @@ public class Test_PostalCode extends TestCase {
 		PostalCode p2 = new PostalCode("b2n9p3");
 		assertNotNull("\t\tTest_Address.testMutators: Address is null", p2);
 
-		p2.SetPostalCode("k1g3n9");
+		p2.setPostalCode("k1g3n9");
 
-		assertEquals("k1g3n9", p2.GetPostalCode());
+		assertEquals("k1g3n9", p2.getPostalCode());
 	}
 
 	/**
