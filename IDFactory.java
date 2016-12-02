@@ -24,6 +24,7 @@ switch(x){
 		case "CON" : return (ID) new ConductorID();
 		case "S" : return (ID) new SoloistID();
 		case "ST" : return (ID) new StaffID();
+		case "COM" : return (ID) new ComposerID();
 
 		      }
 		return null;		
